@@ -1,0 +1,15 @@
+{
+  "name": "codelogy-icon",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^18.1.0",
+    "@angular/core": "^18.1.0"
+  },
+  "dependencies": {
+    "@iconify-json/logos": "^1.1.43",
+    "@iconify-json/ph": "^1.1.13",
+    "iconify-icon": "^2.1.0",
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

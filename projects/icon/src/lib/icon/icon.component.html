@@ -1,0 +1,9 @@
+@if (loaded) {
+<ng-container>
+  <svg [attr.viewBox]="viewBox" [innerHTML]="path | safeHtml"></svg>
+</ng-container>
+} @else {
+<ng-container>
+  <div class="placeholder"></div>
+</ng-container>
+}
