@@ -10,6 +10,10 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
+  getHeaderData<T>(): Observable<T> {
+    const navbarDataUrl: string = this.url + "/navbar";
+    return this.http.get<T>(navbarDataUrl);
+  }
   getFooterData<T>(): Observable<T> {
     const footerDataUrl: string = this.url + "/footer";
     return this.http.get<T>(footerDataUrl);

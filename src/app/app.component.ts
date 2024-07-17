@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ComponentsModule } from './components/components.module';
-import { FooterBarComponent } from "./components/navegations/footer-bar/footer-bar.component";
+import { SharedModule } from './shared/shared.module';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { FooterBarComponent } from "./components/navegations/footer-bar/footer-b
   imports: [
     RouterOutlet,
     ComponentsModule,
-    FooterBarComponent
+    SharedModule,
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
