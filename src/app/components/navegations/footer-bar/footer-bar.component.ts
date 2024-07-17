@@ -10,6 +10,11 @@ import { ApiService } from '../../../services/api.service';
 })
 export class FooterBarComponent {
   footerData!: FooterData;
+  constructor(private apiService: ApiService) {
+    this.apiService.getFooterData<FooterData>().subscribe(data => {
+      this.footerData = data
+    })
+  }
 }
 export interface FooterData {
   designLink: string;
