@@ -12,19 +12,14 @@
 
     html,
     body {
-        @apply bg-theme-primary dark:bg-theme-primary-dark
+        @apply bg-theme-primary dark:bg-theme-primary-dark;
     }
 
     body {
-        @apply max-w-[90rem]
+        @apply max-w-[90rem] text-theme-600 dark:text-theme-600-dark;
     }
 
     a {
-        @apply text-base text-theme-600 hover:text-theme-50-dark dark:text-theme-600-dark dark:hover:text-theme-50 active:text-theme-600 dark:active:text-theme-600-dark ring-0
+        @apply text-base text-theme-600 hover:text-theme-50-dark dark:text-theme-600-dark dark:hover:text-theme-50 active:text-theme-600 dark:active:text-theme-600-dark ring-0;
     }
-
-    button {
-        @apply text-base text-theme-50 hover:text-theme-50-dark dark:text-theme-50-dark dark:hover:text-theme-50  bg-theme-900 hover:bg-theme-700 dark:bg-theme-900-dark dark:hover:bg-theme-700-dark px-4 py-1.5 rounded-primary
-    }
-
 }
