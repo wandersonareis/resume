@@ -1,0 +1,28 @@
+<div
+  class="flex w-full justify-center items-center text-subtitle text-primary dark:text-theme-600-dark py-4 px-2"
+>
+  <div
+    class="flex flex-col md:flex-row md:space-x-8 w-full justify-center items-center"
+  >
+    <p>
+      <span>©️ {{ footerData.designYear }} | </span>
+      <a
+        [href]="footerData.designLink"
+        class="text-base font-medium underline after:ml-1"
+        target="_blank"
+        >Designed by</a
+      >
+      <span>{{ footerData.designBy }}</span>
+    </p>
+    <p class="md:before:mr-1">
+      <span>©️ {{ footerData.codeYear }} | </span>
+      <a
+        [href]="footerData.codeLink"
+        class="text-base font-medium underline after:ml-1"
+        target="_blank"
+        >coded by</a
+      >
+      <span>️️{{ footerData.codedBy }}</span>
+    </p>
+  </div>
+</div>
