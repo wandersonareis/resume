@@ -21,6 +21,7 @@
     "@angular/router": "^18.0.0",
     "@iconify-json/devicon": "^1.1.47",
     "@iconify-json/ph": "^1.1.13",
+    "@iconify/icons-simple-icons": "^1.2.74",
     "iconify-icon": "^2.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
