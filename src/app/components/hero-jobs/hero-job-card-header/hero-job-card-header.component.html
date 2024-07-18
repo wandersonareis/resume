@@ -1,0 +1,15 @@
+<div
+  class="flex flex-col gap-4 md:flex-row md:items-center justify-between text-lg"
+>
+  <figure>
+    <img
+      [src]="job.companyLogo"
+      [alt]="job.company + ' logo'"
+      loading="lazy"
+      width="85px"
+      height="85px"
+    />
+  </figure>
+  <h3 class="text-lg order-2 md:order-1">{{ job.title }}</h3>
+  <time class="text-base order-1 md:order-2">{{ job.duration }}</time>
+</div>
