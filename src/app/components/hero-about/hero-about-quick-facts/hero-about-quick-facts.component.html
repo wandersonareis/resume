@@ -1,0 +1,9 @@
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+  @for (fact of facts; track $index) {
+  <ul class="text-base text-wrap px-4 gap-3">
+    <li class="list-disc">
+      <span>{{ fact }}</span>
+    </li>
+  </ul>
+  }
+</div>

@@ -4,6 +4,7 @@ import { FooterBarComponent } from './navegations/footer-bar/footer-bar.componen
 import { HeaderBarComponent } from './navegations/header-bar/header-bar.component';
 import { ContactComponent } from './contact/contact.component';
 import { HeroComponent } from './hero/hero.component';
+import { HeroAboutComponent } from './hero-about/hero-about.component';
 
 
 
@@ -13,12 +14,14 @@ import { HeroComponent } from './hero/hero.component';
     CommonModule,
     HeaderBarComponent,
     HeroComponent,
+    HeroAboutComponent,
     ContactComponent,
     FooterBarComponent
   ],
   exports: [
     HeaderBarComponent,
     HeroComponent,
+    HeroAboutComponent,
     ContactComponent,
     FooterBarComponent
   ]
