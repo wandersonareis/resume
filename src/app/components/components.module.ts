@@ -5,6 +5,7 @@ import { HeaderBarComponent } from './navegations/header-bar/header-bar.componen
 import { ContactComponent } from './contact/contact.component';
 import { HeroComponent } from './hero/hero.component';
 import { HeroAboutComponent } from './hero-about/hero-about.component';
+import { HeroSkillsComponent } from './hero-skills/hero-skills.component';
 
 
 
@@ -15,6 +16,7 @@ import { HeroAboutComponent } from './hero-about/hero-about.component';
     HeaderBarComponent,
     HeroComponent,
     HeroAboutComponent,
+    HeroSkillsComponent,
     ContactComponent,
     FooterBarComponent
   ],
@@ -22,6 +24,7 @@ import { HeroAboutComponent } from './hero-about/hero-about.component';
     HeaderBarComponent,
     HeroComponent,
     HeroAboutComponent,
+    HeroSkillsComponent,
     ContactComponent,
     FooterBarComponent
   ]
