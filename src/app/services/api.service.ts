@@ -26,6 +26,10 @@ export class ApiService {
     const heroSkillsUrl: string = this.url + "/skills";
     return this.http.get<T>(heroSkillsUrl);
   }
+  getHeroJobsData<T>(): Observable<T> {
+    const jobsDataUrl: string = this.url + "/experiences";
+    return this.http.get<T>(jobsDataUrl);
+  }
   getContactData<T>(): Observable<T> {
     const contactDataUrl: string = this.url + "/contact";
     return this.http.get<T>(contactDataUrl);
