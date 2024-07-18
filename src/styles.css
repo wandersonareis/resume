@@ -4,6 +4,9 @@
 @tailwind utilities;
 
 @layer base {
+    :root {
+        --icon-svg-size: 24px;
+    }
     * {
         margin: 0;
         padding: 0;
