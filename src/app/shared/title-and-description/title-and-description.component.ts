@@ -12,5 +12,5 @@ import { BadgeComponent } from '../badge/badge.component';
 })
 export class TitleAndDescriptionComponent {
   @Input() title: string = 'Empty';
-  @Input() description: string = 'Description';
+  @Input() description!: string;
 }
