@@ -14,6 +14,10 @@ export class ApiService {
     const navbarDataUrl: string = this.url + "/navbar";
     return this.http.get<T>(navbarDataUrl);
   }
+  getHeroCardData<T>(): Observable<T> {
+    const heroDataUrl: string = this.url + "/profile";
+    return this.http.get<T>(heroDataUrl);
+  }
   getContactData<T>(): Observable<T> {
     const contactDataUrl: string = this.url + "/contact";
     return this.http.get<T>(contactDataUrl);
