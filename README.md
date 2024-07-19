@@ -3,7 +3,7 @@
 Bem-vindo ao repositório do meu site pessoal.
 Este projeto foi desenvolvido com o objetivo de apresentar meu portfólio, minhas habilidades e informações sobre meus projetos.
 
-## Design utilizado
+## 😍 Design utilizado
 
 - **Figma**: [Portifolio website template](https://www.figma.com/proto/jqyhccuI4poIalDW2NROei/Personal-Portfolio-Website-Template-%7C-Mobile-%26-Desktop-(Community)?t=wMkkoaIggfA1RnjW-1) by Sarah
 
