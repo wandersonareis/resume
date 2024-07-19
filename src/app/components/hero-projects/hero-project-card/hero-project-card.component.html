@@ -1,0 +1,18 @@
+<div
+  class="flex flex-col dark:bg-theme-800 md:flex-row max-w-6xl rounded-xl shadow-xl overflow-hidden"
+  [ngClass]="{ 'md:flex-row-reverse': isOdd }"
+>
+  <figure class="p-12 bg-theme-100 dark:bg-theme-200-dark max-w-[30rem]">
+    <img [src]="project.imageUrl" [alt]="project.title" class="rounded-lg" />
+  </figure>
+  <article class="flex flex-col gap-6 p-8 md:p-12 max-w-xl">
+    <p class="text-lg font-semibold">{{ project.title }}</p>
+    <p class="text-justify">{{ project.description }}</p>
+    <div class="flex flex-wrap gap-2">
+      @for (tag of project.technologies; track $index) {
+      <badge [label]="tag" />
+      }
+    </div>
+    <external-link-button [link]="project.link" />
+  </article>
+</div>

@@ -7,6 +7,7 @@ import { HeroComponent } from './hero/hero.component';
 import { HeroAboutComponent } from './hero-about/hero-about.component';
 import { HeroSkillsComponent } from './hero-skills/hero-skills.component';
 import { HeroJobsComponent } from './hero-jobs/hero-jobs.component';
+import { HeroProjectsComponent } from './hero-projects/hero-projects.component';
 
 
 
@@ -19,6 +20,7 @@ import { HeroJobsComponent } from './hero-jobs/hero-jobs.component';
     HeroAboutComponent,
     HeroSkillsComponent,
     HeroJobsComponent,
+    HeroProjectsComponent,
     ContactComponent,
     FooterBarComponent
   ],
@@ -28,6 +30,7 @@ import { HeroJobsComponent } from './hero-jobs/hero-jobs.component';
     HeroAboutComponent,
     HeroSkillsComponent,
     HeroJobsComponent,
+    HeroProjectsComponent,
     ContactComponent,
     FooterBarComponent
   ]

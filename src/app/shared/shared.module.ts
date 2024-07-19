@@ -8,6 +8,7 @@ import { CopyButtonComponent } from './copy-button/copy-button.component';
 import { SocialLinksComponent } from './social-links/social-links.component';
 import { BadgeComponent } from './badge/badge.component';
 import { TitleAndDescriptionComponent } from './title-and-description/title-and-description.component';
+import { ExternalLinkButtonComponent } from './external-link-button/external-link-button.component';
 
 
 
@@ -22,6 +23,7 @@ import { TitleAndDescriptionComponent } from './title-and-description/title-and-
     CopyButtonComponent,
     SocialLinksComponent,
     BadgeComponent,
+    ExternalLinkButtonComponent,
     TitleAndDescriptionComponent
   ],
   exports: [
@@ -32,6 +34,7 @@ import { TitleAndDescriptionComponent } from './title-and-description/title-and-
     CopyButtonComponent,
     SocialLinksComponent,
     BadgeComponent,
+    ExternalLinkButtonComponent,
     TitleAndDescriptionComponent
   ]
 })
