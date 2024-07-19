@@ -1,0 +1,14 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+  @for (testimonial of testimonials; track $index) {
+  <article
+    class="flex flex-col items-center max-w-[421px] gap-6 rounded-xl p-8 dark:bg-theme-800 shadow-md dark:shadow dark:md:shadow-2xl"
+  >
+    <avatar [url]="testimonial.avatar" [alt]="testimonial.authorName" />
+    <testimonials-content [content]="testimonial.content" />
+    <testimonials-footer
+      [authorName]="testimonial.authorName"
+      [authorOccupation]="testimonial.authorTitle"
+    />
+  </article>
+  }
+</div>
