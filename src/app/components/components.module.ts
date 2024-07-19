@@ -8,6 +8,7 @@ import { HeroAboutComponent } from './hero-about/hero-about.component';
 import { HeroSkillsComponent } from './hero-skills/hero-skills.component';
 import { HeroJobsComponent } from './hero-jobs/hero-jobs.component';
 import { HeroProjectsComponent } from './hero-projects/hero-projects.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 
 
@@ -22,6 +23,7 @@ import { HeroProjectsComponent } from './hero-projects/hero-projects.component';
     HeroJobsComponent,
     HeroProjectsComponent,
     ContactComponent,
+    TestimonialsComponent,
     FooterBarComponent
   ],
   exports: [
@@ -31,6 +33,7 @@ import { HeroProjectsComponent } from './hero-projects/hero-projects.component';
     HeroSkillsComponent,
     HeroJobsComponent,
     HeroProjectsComponent,
+    TestimonialsComponent,
     ContactComponent,
     FooterBarComponent
   ]

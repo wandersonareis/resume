@@ -34,6 +34,10 @@ export class ApiService {
     const projectsDataUrl: string = this.url + "/projects";
     return this.http.get<T>(projectsDataUrl);
   }
+  getTestimonialsData<T>(): Observable<T> {
+    const testimonialsDataUrl: string = this.url + "/testimonials";
+    return this.http.get<T>(testimonialsDataUrl);
+  }
   getContactData<T>(): Observable<T> {
     const contactDataUrl: string = this.url + "/contact";
     return this.http.get<T>(contactDataUrl);

@@ -9,31 +9,34 @@ import { SocialLinksComponent } from './social-links/social-links.component';
 import { BadgeComponent } from './badge/badge.component';
 import { TitleAndDescriptionComponent } from './title-and-description/title-and-description.component';
 import { ExternalLinkButtonComponent } from './external-link-button/external-link-button.component';
+import { AvatarComponent } from './avatar/avatar.component';
 
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
     IconModule,
-    LinkButtonComponent,
-    ThemeToggleComponent,
+    CommonModule,
+    BadgeComponent,
+    AvatarComponent,
     MailLinkComponent,
     CopyButtonComponent,
+    LinkButtonComponent,
+    ThemeToggleComponent,
     SocialLinksComponent,
-    BadgeComponent,
     ExternalLinkButtonComponent,
     TitleAndDescriptionComponent
   ],
   exports: [
     IconModule,
-    LinkButtonComponent,
-    ThemeToggleComponent,
-    MailLinkComponent,
-    CopyButtonComponent,
-    SocialLinksComponent,
     BadgeComponent,
+    AvatarComponent,
+    MailLinkComponent,
+    LinkButtonComponent,
+    CopyButtonComponent,
+    ThemeToggleComponent,
+    SocialLinksComponent,
     ExternalLinkButtonComponent,
     TitleAndDescriptionComponent
   ]
