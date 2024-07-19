@@ -1,27 +1,65 @@
-# Resume
+# Resume - Website Pessoal de Wanderson A. Reis
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
+Bem-vindo ao repositório do meu site pessoal.
+Este projeto foi desenvolvido com o objetivo de apresentar meu portfólio, minhas habilidades e informações sobre meus projetos.
 
-## Development server
+## Design utilizado
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Figma**: [Portifolio website template](https://www.figma.com/proto/jqyhccuI4poIalDW2NROei/Personal-Portfolio-Website-Template-%7C-Mobile-%26-Desktop-(Community)?t=wMkkoaIggfA1RnjW-1) by Sarah
 
-## Code scaffolding
+## 🚀 Tecnologias Utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular**: Framework na versão 18 foi utilizado para a construção do site.
+- **Tailwind**: Estilização e layout do site.
+- **JavaScript/TypeScript**: Interatividade e funcionalidades dinâmicas.
+- **Iconify**: Ícones.
 
-## Build
+## 🔧 Como Rodar o Projeto Localmente
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Para visualizar e editar o site localmente, siga os seguintes passos:
 
-## Running unit tests
+1. **Clone o repositório**:
+    ```bash
+    git clone https://github.com/wandersonareis/resume.git
+    ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. **Navegue até o diretório do projeto**:
+    ```bash
+    cd resume
+    ```
 
-## Running end-to-end tests
+3. **Instale as dependências do projeto**:
+    ```bash
+    npm install
+    ```
+4. **Rode o projeto localmente**:
+    ```bash
+    ng serve
+    ```
+5. **Acesse o projeto no navegador**:
+    - Abra o navegador e acesse `http://localhost:4200`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🌟 Funcionalidades
 
-## Further help
+- **Apresentação Pessoal**: Informações sobre minha formação, habilidades e experiência.
+- **Portfólio de Projetos**: Listagem dos meus principais projetos com descrições e links.
+- **Contato**: Formulário para que visitantes possam entrar em contato comigo.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📈 Melhorias Futuras
+
+- Adição de limitar a exebição em apenas três cards para minhas experiências, projetos e testemunhos no index.
+- Criar uma página para cursos e certificados.
+- Otimizações de performance e acessibilidade.
+
+## 🌐 Deploy
+
+O site está publicado e pode ser acessado em: [wandersonareis.github.io](https://wandersonareis.github.io/)
+
+## 📝 Licença
+
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
+
+---
+
+Feito com ❤️ por [Wanderson A. Reis](hhttps://github.com/wandersonareis).
+```
