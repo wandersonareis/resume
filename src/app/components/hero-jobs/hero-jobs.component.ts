@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { ApiService } from '../../services/api.service';
 import { SharedModule } from '../../shared/shared.module';
 import { HeroJobCardComponent } from './hero-job-card/hero-job-card.component';
+import { HeroJobsService } from './services/hero-jobs.service';
 
 @Component({
   selector: 'app-hero-jobs',
@@ -16,8 +16,8 @@ import { HeroJobCardComponent } from './hero-job-card/hero-job-card.component';
 export class HeroJobsComponent {
   jobsData!: JobsData;
 
-  constructor(private apiService: ApiService) {
-    this.apiService.getHeroJobsData<JobsData>().subscribe(data => {
+  constructor(private jobsService: HeroJobsService) {
+    this.jobsService.getHeroJobsData<JobsData>().subscribe(data => {
       this.jobsData = data
     })
   }

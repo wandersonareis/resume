@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ApiService } from '../../../services/api.service';
+import { FooterService } from './services/footer.service';
 
 @Component({
   selector: 'app-footer-bar',
@@ -10,8 +10,8 @@ import { ApiService } from '../../../services/api.service';
 })
 export class FooterBarComponent {
   footerData!: FooterData;
-  constructor(private apiService: ApiService) {
-    this.apiService.getFooterData<FooterData>().subscribe(data => {
+  constructor(private footerService: FooterService) {
+    this.footerService.getFooterData<FooterData>().subscribe(data => {
       this.footerData = data
     })
   }
