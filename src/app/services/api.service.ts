@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Observer } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,23 +14,12 @@ export class ApiService {
   }
 
   getCachedData<T>(key: string, url: string): Observable<T> {
-    let dataObservable = Observable.create((observer: Observer<T>) => {
-      if (this.cacheMap.has(key)) {
-        console.log(`## returning existing ${key} data`);
+    if (this.cacheMap.has(key)) {
+      return of(this.cacheMap.get(key));
+    }
 
-        observer.next(this.cacheMap.get(key));
-        return observer.complete();
-      }
-      console.log(`** ${key} data do not yet exist; fetching from rest api...`);
-
-      this.getFromHttp<T>(url).subscribe(data => {
-        this.cacheMap.set(key, data);
-        observer.next(data);
-        return observer.complete();
-      });
-
-    })
-
-    return dataObservable
+    return this.getFromHttp<T>(url).pipe(
+      tap(data => this.cacheMap.set(key, data))
+    );
   }
 }
