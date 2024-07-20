@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { HeroProjectCardComponent, Project } from './hero-project-card/hero-project-card.component';
-import { ApiService } from '../../services/api.service';
 import { ActivatedRoute } from '@angular/router';
+import { ProjectsService } from './services/projects.service';
 
 @Component({
   selector: 'app-hero-projects',
@@ -18,14 +18,14 @@ export class HeroProjectsComponent implements OnInit {
   heroProjectsData!: HeroProjectsData;
 
   constructor(
-    private apiService: ApiService,
+    private projectsService: ProjectsService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       const tech = params.get('tech');
-      this.apiService.getHeroProjectsByFilterData(tech).subscribe(data => {
+      this.projectsService.getHeroProjectsByFilterData(tech).subscribe(data => {
         this.heroProjectsData = data;
       });
     })

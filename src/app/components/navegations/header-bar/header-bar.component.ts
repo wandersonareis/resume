@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { LinkButton } from '../../../shared/link-button/link-button.component';
 import { RouterModule } from '@angular/router';
-import { ApiService } from '../../../services/api.service';
 import { HeaderLogoComponent } from './header-logo/header-logo.component';
 import { HeaderMenuComponent, NavItem } from './header-menu/header-menu.component';
+import { HeaderService } from './services/header.service';
 
 @Component({
   selector: 'app-header-bar',
@@ -18,15 +18,13 @@ import { HeaderMenuComponent, NavItem } from './header-menu/header-menu.componen
 })
 export class HeaderBarComponent {
   headerData!: NavbarData
-  constructor(private apiService: ApiService) {
-    this.apiService.getHeaderData<NavbarData>().subscribe(data => {
+  constructor(private headerService: HeaderService) {
+    this.headerService.getHeaderData<NavbarData>().subscribe(data => {
       this.headerData = data
     })
   }
 
 }
-
-
 
 export interface NavbarData {
   label: string;
