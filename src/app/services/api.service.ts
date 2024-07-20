@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { HeroProjectsData } from '../components/hero-projects/hero-projects.component';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,23 @@ export class ApiService {
   getHeroProjectsData<T>(): Observable<T> {
     const projectsDataUrl: string = this.url + "/projects";
     return this.http.get<T>(projectsDataUrl);
+  }
+  getHeroProjectsByFilterData(tech: string | null): Observable<HeroProjectsData> {
+    return this.getHeroProjectsData<HeroProjectsData>()
+      .pipe(
+        map(data => {
+          const projects = data.projectsList;
+
+          if (!tech) return data;
+
+          const filteredProjects = projects.filter(project =>
+            project.technologies.includes(tech)
+          );
+
+          const newData = Object.assign({}, data, { projectsList: filteredProjects })
+          return filteredProjects.length > 0 ? newData : data
+        })
+      );
   }
   getTestimonialsData<T>(): Observable<T> {
     const testimonialsDataUrl: string = this.url + "/testimonials";
