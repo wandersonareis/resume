@@ -3,7 +3,7 @@
 Bem-vindo ao repositório do meu site pessoal.
 Este projeto foi desenvolvido com o objetivo de apresentar meu portfólio, minhas habilidades e informações sobre meus projetos.
 
-## Design utilizado
+## 😍 Design utilizado
 
 - **Figma**: [Portifolio website template](https://www.figma.com/proto/jqyhccuI4poIalDW2NROei/Personal-Portfolio-Website-Template-%7C-Mobile-%26-Desktop-(Community)?t=wMkkoaIggfA1RnjW-1) by Sarah
 
@@ -47,8 +47,9 @@ Para visualizar e editar o site localmente, siga os seguintes passos:
 
 ## 📈 Melhorias Futuras
 
-- Adição de limitar a exebição em apenas três cards para minhas experiências, projetos e testemunhos no index.
-- Criar uma página para cursos e certificados.
+- [ ] Adição de limitar a exebição em apenas três cards para minhas experiências, projetos e testemunhos no index.
+- [ ] Filltrar projetos pela tecnologia usada.
+- [ ] Criar uma página para cursos e certificados.
 - Otimizações de performance e acessibilidade.
 
 ## 🌐 Deploy
