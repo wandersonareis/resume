@@ -3,7 +3,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { HeroAboutQuickFactsComponent } from './hero-about-quick-facts/hero-about-quick-facts.component';
 import { HeroAboutPictureComponent } from './hero-about-picture/hero-about-picture.component';
 import { HeroAboutDescriptionComponent } from './hero-about-description/hero-about-description.component';
-import { SkillsService } from '../hero-skills/services/skills.service';
+import { AboutService } from './services/about.service';
 
 @Component({
   selector: 'app-hero-about',
@@ -20,8 +20,8 @@ import { SkillsService } from '../hero-skills/services/skills.service';
 export class HeroAboutComponent {
   heroAboutData!: HeroAboutData;
 
-  constructor(private skillsService: SkillsService) {
-    this.skillsService.getHeroSkillsData<HeroAboutData>().subscribe(data => {
+  constructor(private aboutService: AboutService) {
+    this.aboutService.getHeroAboutData<HeroAboutData>().subscribe(data => {
       this.heroAboutData = data
     })
   }
