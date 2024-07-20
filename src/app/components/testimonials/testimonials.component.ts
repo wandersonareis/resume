@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
-import { ApiService } from '../../services/api.service';
 import { Testimonial, TestimonialsCardsComponent } from './testimonials-cards/testimonials-cards.component';
+import { TestimonialsService } from './service/testimonials.service';
 
 
 export interface TestimonialsData {
@@ -22,8 +22,8 @@ export interface TestimonialsData {
 })
 export class TestimonialsComponent {
   testimonialsData!: TestimonialsData;
-  constructor(private apiService: ApiService) {
-    this.apiService.getTestimonialsData<TestimonialsData>().subscribe(data => {
+  constructor(private testimonialsService: TestimonialsService) {
+    this.testimonialsService.getTestimonialsData<TestimonialsData>().subscribe(data => {
       this.testimonialsData = data
     })
   }

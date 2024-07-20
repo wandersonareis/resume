@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
-import { ApiService } from '../../services/api.service';
 import { HeroAboutQuickFactsComponent } from './hero-about-quick-facts/hero-about-quick-facts.component';
 import { HeroAboutPictureComponent } from './hero-about-picture/hero-about-picture.component';
 import { HeroAboutDescriptionComponent } from './hero-about-description/hero-about-description.component';
+import { SkillsService } from '../hero-skills/services/skills.service';
 
 @Component({
   selector: 'app-hero-about',
@@ -20,8 +20,8 @@ import { HeroAboutDescriptionComponent } from './hero-about-description/hero-abo
 export class HeroAboutComponent {
   heroAboutData!: HeroAboutData;
 
-  constructor(private apiService: ApiService) {
-    this.apiService.getHeroAboutData<HeroAboutData>().subscribe(data => {
+  constructor(private skillsService: SkillsService) {
+    this.skillsService.getHeroSkillsData<HeroAboutData>().subscribe(data => {
       this.heroAboutData = data
     })
   }
