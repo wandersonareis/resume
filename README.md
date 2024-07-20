@@ -47,9 +47,13 @@ Para visualizar e editar o site localmente, siga os seguintes passos:
 
 ## 📈 Melhorias Futuras
 
-- [ ] Adição de limitar a exebição em apenas três cards para minhas experiências, projetos e testemunhos no index.
-- [X] Filltrar projetos pela tecnologia usada.
-- [ ] Criar uma página para cursos e certificados.
+- Projects
+    - [X] Filltrar projetos pela tecnologia usada.
+- Novas funcionalidades
+  - [ ] Criar uma página para cursos e certificados.
+  - [ ] Limitar a exibição para três cards na página home.
+  - [X] Adicionar cache para as requisições.
+  - [ ] Adicionar opção para exibição em idiomas diferentes.
 - Otimizações de performance e acessibilidade.
 
 ## 🌐 Deploy
@@ -63,4 +67,3 @@ Este projeto está licenciado sob a [Licença MIT](LICENSE).
 ---
 
 Feito com ❤️ por [Wanderson A. Reis](hhttps://github.com/wandersonareis).
-```
