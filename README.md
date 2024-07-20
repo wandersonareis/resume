@@ -48,7 +48,7 @@ Para visualizar e editar o site localmente, siga os seguintes passos:
 ## 📈 Melhorias Futuras
 
 - [ ] Adição de limitar a exebição em apenas três cards para minhas experiências, projetos e testemunhos no index.
-- [ ] Filltrar projetos pela tecnologia usada.
+- [X] Filltrar projetos pela tecnologia usada.
 - [ ] Criar uma página para cursos e certificados.
 - Otimizações de performance e acessibilidade.
 
