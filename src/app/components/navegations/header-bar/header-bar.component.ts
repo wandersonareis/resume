@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
-import { SharedModule } from '../../../shared/shared.module';
 import { LinkButton } from '../../../shared/link-button/link-button.component';
 import { RouterModule } from '@angular/router';
 import { ApiService } from '../../../services/api.service';
+import { HeaderLogoComponent } from './header-logo/header-logo.component';
+import { HeaderMenuComponent, NavItem } from './header-menu/header-menu.component';
 
 @Component({
   selector: 'app-header-bar',
   standalone: true,
   imports: [
     RouterModule,
-    SharedModule
+    HeaderLogoComponent,
+    HeaderMenuComponent
   ],
   templateUrl: './header-bar.component.html',
   styleUrl: './header-bar.component.css'
@@ -24,10 +26,7 @@ export class HeaderBarComponent {
 
 }
 
-export type NavItem = {
-  label: string
-  routerLink: string;
-};
+
 
 export interface NavbarData {
   label: string;
