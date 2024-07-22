@@ -1,1 +1,0 @@
-export const ENDPOINT: string = 'https://api.npoint.io/90a4e87f89c17143fd2a';
