@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { TranslocoService } from '@jsverse/transloco';
 import { Observable, of, tap } from 'rxjs';
 
 @Injectable({
@@ -7,7 +8,10 @@ import { Observable, of, tap } from 'rxjs';
 })
 export class ApiService {
   private cacheMap: Map<string, any> = new Map();
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private translateService: TranslocoService
+  ) { }
 
   getFromHttp<T>(url: string): Observable<T> {
     return this.http.get<T>(url);
@@ -21,5 +25,9 @@ export class ApiService {
     return this.getFromHttp<T>(url).pipe(
       tap(data => this.cacheMap.set(key, data))
     );
+  }
+
+  getData<T>(key: string): Observable<T> {
+    return this.translateService.selectTranslateObject<T>(key);
   }
 }
