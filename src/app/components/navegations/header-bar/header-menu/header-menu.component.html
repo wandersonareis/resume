@@ -1,60 +1,56 @@
-<div class="flex space-x-3 md:space-x-0">
-    <button
-      data-collapse-toggle="navbar-sticky"
-      type="button"
-      class="inline-flex lg:hidden items-center p-2 w-10 h-10 justify-center text-sm text-theme-500 rounded-lg hover:bg-theme-100 focus:outline-none focus:ring-2 focus:ring-theme-200 dark:text-theme-400 dark:hover:bg-theme-700-dark dark:focus:ring-theme-600-dark"
-      aria-controls="navbar-sticky"
-      aria-expanded="false"
-    >
-      <span class="sr-only">Open main menu</span>
-      <svg
-        class="w-5 h-5"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 17 14"
-      >
-        <path
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M1 1h15M1 7h15M1 13h15"
-        />
-      </svg>
-    </button>
-  </div>
-  <!-- Dropdown menu or menu bar -->
+<div class="flex items-center space-x-3 md:space-x-0">
+  <theme-toggle class="lg:hidden" />
 
-  <div
-    class="hidden w-full max-w-80 md:max-w-full lg:flex md:items-center md:justify-center md:w-auto shadow-2xl md:shadow-none"
-    id="navbar-sticky"
+  <button
+    data-dropdown-toggle="navbar-sticky"
+    type="button"
+    class="inline-flex lg:hidden items-center p-2 w-10 h-10 justify-center text-sm text-theme-500 rounded-lg hover:bg-theme-100 focus:outline-none focus:ring-2 focus:ring-theme-200 dark:text-theme-400 dark:hover:bg-theme-700-dark dark:focus:ring-theme-600-dark"
+    aria-controls="navbar-sticky"
+    aria-expanded="false"
   >
-    <ul
-      class="flex flex-col md:items-center p-4 md:p-0 mt-4 font-medium rounded-lg md:flex-row md:mt-0 md:border-0 gap-2 md:gap-4"
+    <span class="sr-only">Open main menu</span>
+    <svg
+      class="w-5 h-5"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 17 14"
     >
-      @for (item of navLinks; track $index) {
-      <li>
-        <a
-          [routerLink]="item.routerLink"
-          routerLinkActive="border-b-2 border-theme-600 dark:border-theme-600-dark"
-          ariaCurrentWhenActive="page"
-          class="block text-theme-600 hover:text-theme-900 md:p-0 dark:text-theme-300 dark:hover:text-theme-50"
-          >{{ item.label }}</a
-        >
-      </li>
-      }
-    </ul>
-    <div
-      class="flex flex-col md:flex-row items-center gap-4 px-4 border-t md:border-none border-theme-100"
-    >
-      <div
-        class="flex items-center justify-between space-x-3 md:space-x-0 w-full"
+      <path
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M1 1h15M1 7h15M1 13h15"
+      />
+    </svg>
+  </button>
+</div>
+<!-- Dropdown menu or menu bar -->
+
+<div
+  class="hidden w-full max-w-80 bg-theme-primary dark:bg-theme-primary-dark p-4 border-x-2 border-b-2 border-theme-400 dark:border-theme-50 lg:border-none gap-4 rounded-md shadow-2xl lg:flex lg:max-w-full lg:items-center lg:justify-center md:w-auto lg:shadow-none"
+  id="navbar-sticky"
+>
+  <ul
+    class="flex flex-col lg:items-center py-4 lg:p-0 mt-4 font-medium rounded-lg lg:flex-row lg:mt-0 lg:border-0 gap-2 lg:gap-4"
+  >
+    @for (item of navLinks; track $index) {
+    <li>
+      <a
+        [routerLink]="item.routerLink"
+        routerLinkActive="border-b-2 border-theme-600 dark:border-theme-600-dark"
+        ariaCurrentWhenActive="page"
+        class="block text-theme-600 hover:text-theme-900 md:p-0 dark:text-theme-300 dark:hover:text-theme-50"
+        >{{ item.label }}</a
       >
-        <span class="lg:hidden lg:sr-only">Switch Theme</span>
-        <theme-toggle />
-      </div>
-      <language-selector />
-      <link-button [downloadCv]="downloadCv"></link-button>
-    </div>
+    </li>
+    }
+  </ul>
+  <div
+    class="flex flex-col w-full lg:flex-row items-center gap-4 border-t md:border-none border-theme-100"
+  >
+    <theme-toggle class="hidden lg:flex" />
+    <link-button class="w-full" [downloadCv]="downloadCv"></link-button>
   </div>
+</div>
