@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Contact, ContactRowComponent } from './contact-row/contact-row.component';
 import { Social } from '../../shared/social-links/social-links.component';
 import { SharedModule } from '../../shared/shared.module';
-import { ContactService } from './services/contact.service';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-contact',
@@ -16,10 +16,11 @@ import { ContactService } from './services/contact.service';
 })
 export class ContactComponent {
   contactData!: ContactData
-  constructor(private contactService: ContactService) {
-    this.contactService.getContactData<ContactData>().subscribe(data => {
-      this.contactData = data
-    })
+  constructor(private apiService: ApiService) {
+    this.apiService.getData<ContactData>('contact').subscribe(
+      (data: ContactData) => {
+        this.contactData = data
+      })
   }
 }
 
