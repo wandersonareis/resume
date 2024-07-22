@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from '../../../services/api.service';
-import { map, Observable, shareReplay, tap } from 'rxjs';
-import { ENDPOINT } from '../../../shared/constants';
+import { map, Observable } from 'rxjs';
 import { HeroProjectsData } from '../hero-projects.component';
 
 @Injectable({
