@@ -53,7 +53,7 @@ Para visualizar e editar o site localmente, siga os seguintes passos:
   - [ ] Criar uma página para cursos e certificados.
   - [ ] Limitar a exibição para três cards na página home.
   - [X] Adicionar cache para as requisições.
-  - [ ] Adicionar opção para exibição em idiomas diferentes.
+  - [X] Adicionar opção para exibição em idiomas diferentes.
 - Otimizações de performance e acessibilidade.
 
 ## 🌐 Deploy

@@ -4,47 +4,59 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --icon-svg-size: 24px;
-    }
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+  :root {
+    --icon-svg-size: 24px;
+  }
 
-    html{
-        font-size: 94.118%;
-    }
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Inter Regular");
+    src: url(/assets/font/inter.woff2) format("woff2"),
+      url(/assets/font/inter.ttf) format("truetype");
+  }
 
-    html,
-    body {
-        @apply bg-theme-primary dark:bg-theme-primary-dark mx-auto;
-    }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    body {
-        @apply max-w-[90rem] text-theme-600 dark:text-theme-600-dark;
-    }
+  html {
+    font-size: 94.118%;
+    min-width: 396px;
+  }
 
-    h1 {
-        @apply text-3xl md:text-5xl md:font-bold lg:text-6xl;
-    }
+  html,
+  body {
+    @apply bg-theme-primary dark:bg-theme-primary-dark mx-auto;
+  }
 
-    h2 {
-        @apply text-lg lg:text-3xl;
-    }
-    
-    h3 {
-        @apply text-2xl lg:text-3xl;
-    }
-    
-    h1,
-    h2,
-    h3 {
-        @apply text-theme-900 dark:text-theme-900-dark font-semibold;
-    }
+  body {
+    @apply max-w-[90rem] text-theme-600 dark:text-theme-600-dark;
+  }
 
-    a {
-        @apply text-base text-theme-600 hover:text-theme-50-dark dark:text-theme-600-dark dark:hover:text-theme-50 active:text-theme-600 dark:active:text-theme-600-dark ring-0;
-    }
+  h1 {
+    @apply text-3xl md:text-4xl md:font-bold lg:text-5xl;
+  }
+
+  h2 {
+    @apply text-lg lg:text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl lg:text-3xl;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply text-theme-900 dark:text-theme-900-dark font-semibold;
+  }
+
+  a {
+    @apply text-base text-theme-600 hover:text-theme-50-dark dark:text-theme-600-dark dark:hover:text-theme-50 active:text-theme-600 dark:active:text-theme-600-dark ring-0;
+  }
 }
