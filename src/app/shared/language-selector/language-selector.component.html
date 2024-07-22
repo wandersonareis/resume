@@ -1,0 +1,45 @@
+<button
+  id="dropdownDefaultButton"
+  data-dropdown-toggle="dropdown"
+  class="w-24 font-medium text-theme-600 hover:text-theme-900 md:p-0 dark:text-theme-300 dark:hover:text-theme-50 focus:outline-none rounded-md text-sm text-center inline-flex items-center"
+  type="button"
+>
+  {{ siteLanguage }}
+  <svg
+    class="w-2.5 h-2.5 ms-3"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 10 6"
+  >
+    <path
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="m1 1 4 4 4-4"
+    />
+  </svg>
+</button>
+
+<!-- Dropdown menu -->
+<div
+  id="dropdown"
+  class="z-10 hidden bg-theme-50 divide-y divide-theme-100 rounded-md shadow w-44 dark:bg-theme-900"
+>
+  <ul
+    class="py-2 text-sm text-gray-700 dark:text-gray-200"
+    aria-labelledby="dropdownDefaultButton"
+  >
+    @for (language of languageList; track language.code) {
+    <li>
+      <button
+        class="block w-full px-4 py-2 text-base font-medium text-theme-600 dark:text-theme-600-dark hover:bg-theme-600-dark hover:text-theme-900 dark:hover:bg-theme-600 dark:hover:text-theme-primary"
+        (click)="changeSiteLanguage(language.code)"
+      >
+        {{ language.label }}
+      </button>
+    </li>
+    }
+  </ul>
+</div>
