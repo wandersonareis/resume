@@ -26,6 +26,7 @@
 
   html {
     font-size: 94.118%;
+    min-width: 396px;
   }
 
   html,
