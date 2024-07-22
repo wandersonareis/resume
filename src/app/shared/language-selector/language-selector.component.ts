@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TranslocoService } from '@jsverse/transloco';
 
 @Component({
-  selector: 'app-language-selector',
+  selector: 'language-selector',
   standalone: true,
   imports: [],
   templateUrl: './language-selector.component.html',
@@ -16,7 +16,7 @@ export class LanguageSelectorComponent {
   ]
 
   constructor(private translateService: TranslocoService) { 
-    
+
   }
 
   changeSiteLanguage(language: string) {
