@@ -3,7 +3,7 @@ import { LinkButton } from '../../../shared/link-button/link-button.component';
 import { RouterModule } from '@angular/router';
 import { HeaderLogoComponent } from './header-logo/header-logo.component';
 import { HeaderMenuComponent, NavItem } from './header-menu/header-menu.component';
-import { HeaderService } from './services/header.service';
+import { ApiService } from '../../../services/api.service';
 
 @Component({
   selector: 'app-header-bar',
@@ -18,12 +18,12 @@ import { HeaderService } from './services/header.service';
 })
 export class HeaderBarComponent {
   headerData!: NavbarData
-  constructor(private headerService: HeaderService) {
-    this.headerService.getHeaderData<NavbarData>().subscribe(data => {
-      this.headerData = data
-    })
+  constructor(private apiService: ApiService) {
+    this.apiService.getData<NavbarData>('navbar').subscribe(
+      (data: NavbarData) => {
+        this.headerData = data
+      })
   }
-
 }
 
 export interface NavbarData {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FooterService } from './services/footer.service';
+import { TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-footer-bar',
@@ -10,8 +10,9 @@ import { FooterService } from './services/footer.service';
 })
 export class FooterBarComponent {
   footerData!: FooterData;
-  constructor(private footerService: FooterService) {
-    this.footerService.getFooterData<FooterData>().subscribe(data => {
+  constructor(private translateService: TranslocoService) {
+    this.translateService.selectTranslateObject<FooterData>('footer').subscribe(
+      (data: FooterData) => {
       this.footerData = data
     })
   }

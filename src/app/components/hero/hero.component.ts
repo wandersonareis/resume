@@ -5,7 +5,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { HeroImageComponent } from './hero-image/hero-image.component';
 import { HeroTitleComponent } from './hero-title/hero-title.component';
 import { HeroDescriptionComponent } from './hero-description/hero-description.component';
-import { HeroService } from './services/hero.service';
+import { TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-hero',
@@ -22,8 +22,9 @@ import { HeroService } from './services/hero.service';
 })
 export class HeroComponent {
   heroCardData!: HeroCardData;
-  constructor(private heroService: HeroService) {
-    this.heroService.getHeroData<HeroCardData>().subscribe(data => {
+  constructor(private translateService: TranslocoService) {
+    this.translateService.selectTranslateObject<HeroCardData>('profile').subscribe(
+      (data: HeroCardData) => {
       this.heroCardData = data
     })
   }

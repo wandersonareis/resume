@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { HeroSkillComponent } from './hero-skill/hero-skill.component';
-import { SkillsService } from './services/skills.service';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-hero-skills',
@@ -16,8 +16,9 @@ import { SkillsService } from './services/skills.service';
 export class HeroSkillsComponent {
   heroSkillsData!: HeroSkillsData;
 
-  constructor(private skillsService: SkillsService) {
-    this.skillsService.getHeroSkillsData<HeroSkillsData>().subscribe(data => {
+  constructor(private apiService: ApiService) {
+    this.apiService.getData<HeroSkillsData>('skills').subscribe(
+      (data: HeroSkillsData) => {
       this.heroSkillsData = data
     })
   }
