@@ -25,7 +25,7 @@ export class HeroProjectsComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       const tech = params.get('tech');
-      this.projectsService.getHeroProjectsByFilterData(tech).subscribe(data => {
+      this.projectsService.getProjectsByFilterData(tech).subscribe(data => {
         this.heroProjectsData = data;
       });
     })
