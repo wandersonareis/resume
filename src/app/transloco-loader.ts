@@ -8,7 +8,7 @@ export class TranslocoHttpLoader implements TranslocoLoader {
     private http = inject(HttpClient);
 
     getTranslation(lang: string) {
-        const url = `${environment.apiUrl}/${lang}`;
+        const url = `${environment.API_URL}/${lang}`;
         return this.http.get<Translation>(url);
     }
 }
