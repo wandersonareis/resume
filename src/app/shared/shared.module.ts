@@ -10,10 +10,12 @@ import { TitleAndDescriptionComponent } from './title-and-description/title-and-
 import { ExternalLinkButtonComponent } from './external-link-button/external-link-button.component';
 import { AvatarComponent } from './avatar/avatar.component';
 import { LanguageSelectorComponent } from './language-selector/language-selector.component';
+import { MarkdownPipe } from './pipes/markdown.pipe';
 
 
 const imports = [
   IconModule,
+  MarkdownPipe,
   BadgeComponent,
   AvatarComponent,
   MailLinkComponent,
