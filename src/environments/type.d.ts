@@ -1,5 +1,5 @@
 
 type Environment = {
     production: boolean;
-    API_URL: string;
+    NG_APP_API_URL: string;
 }

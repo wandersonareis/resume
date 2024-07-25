@@ -6,7 +6,7 @@ import { environment } from "../environments/environment";
 @Injectable({ providedIn: 'root' })
 export class TranslocoHttpLoader implements TranslocoLoader {
     private http = inject(HttpClient);
-    #url = environment.API_URL;
+    #url = environment.NG_APP_API_URL;
 
     getTranslation(lang: string) {
         const url = `${this.#url}/${lang}`;
