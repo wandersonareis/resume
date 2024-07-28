@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { ProjectsService } from './projects.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { projects } from '../../../shared/_spec-tools/mock-api.service';
+import { mocked_projects } from '../../../shared/_spec-tools/mock-api.service';
 
 
 describe('ProjectsServiceService', () => {
@@ -26,7 +26,7 @@ describe('ProjectsServiceService', () => {
   });
 
   it('should filter projects by tech', async () => {
-    const mockData = projects;
+    const mockData = mocked_projects;
     const expectedTitle = 'Projects Test';
     const expectedFirstProjectTitle = "Project B";
     const expectedProjectsLength = 1;
@@ -48,7 +48,7 @@ describe('ProjectsServiceService', () => {
 
   it('should filter projects passing no tech', async () => {
     const tech = null;
-    const mockData = projects;
+    const mockData = mocked_projects;
     const expectedTitle = 'Projects Test';
     const expectedFirstProjectTitle = "Project A";
     const expectedLastProjectTitle = "Project C";

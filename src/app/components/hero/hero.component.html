@@ -2,13 +2,14 @@
   <div class="flex flex-col-reverse md:flex-row gap-12 max-w-screen-xl">
     <section class="flex flex-col">
       <div class="flex flex-col gap-12">
-        <div class="flex flex-col max-w-screen-md gap-2">
-          <hero-title [title]="heroCardData.title" />
-          <hero-description [descriptions]="heroCardData.descriptions" />
+        <div class="flex flex-col max-w-screen-md gap-4">
+          <h1>{{ heroCardData.title }}</h1>
+          <markdown-list
+            [items]="heroCardData.descriptions"
+            class="flex flex-col gap-2"
+          />
         </div>
-        <hero-location
-          [location]="heroCardData.location"
-        ></hero-location>
+        <hero-location [location]="heroCardData.location"></hero-location>
         <social-links [links]="heroCardData.social.links"></social-links>
       </div>
     </section>

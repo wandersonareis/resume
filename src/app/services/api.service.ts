@@ -7,7 +7,6 @@ import { Observable, of, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private cacheMap: Map<string, any> = new Map();
   constructor(
     private http: HttpClient,
     private translateService: TranslocoService
@@ -17,17 +16,7 @@ export class ApiService {
     return this.http.get<T>(url);
   }
 
-  getCachedData<T>(key: string, url: string): Observable<T> {
-    if (this.cacheMap.has(key)) {
-      return of(this.cacheMap.get(key));
-    }
-
-    return this.getFromHttp<T>(url).pipe(
-      tap(data => this.cacheMap.set(key, data))
-    );
-  }
-
-  getData<T>(key: string): Observable<T> {
+  getLanguageData<T>(key: string): Observable<T> {
     return this.translateService.selectTranslateObject<T>(key);
   }
 }

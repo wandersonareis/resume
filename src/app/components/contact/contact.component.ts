@@ -17,7 +17,7 @@ import { ApiService } from '../../services/api.service';
 export class ContactComponent {
   contactData!: ContactData
   constructor(private apiService: ApiService) {
-    this.apiService.getData<ContactData>('contact').subscribe(
+    this.apiService.getLanguageData<ContactData>('contact').subscribe(
       (data: ContactData) => {
         this.contactData = data
       })

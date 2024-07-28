@@ -11,7 +11,7 @@ export class ProjectsService {
   constructor(private apiService: ApiService,) { }
 
   getProjectsByFilterData(tech: string | null): Observable<HeroProjectsData> {
-    return this.apiService.getData<HeroProjectsData>("projects").pipe(
+    return this.apiService.getLanguageData<HeroProjectsData>("projects").pipe(
       map((data: HeroProjectsData) => ({
         ...data,
         projectsList: tech
@@ -22,7 +22,7 @@ export class ProjectsService {
   }
 
   getResumeProjects(size: number = 3): Observable<HeroProjectsData> {
-    return this.apiService.getData<HeroProjectsData>("projects")
+    return this.apiService.getLanguageData<HeroProjectsData>("projects")
       .pipe(
         map((data: HeroProjectsData) => ({
           ...data,

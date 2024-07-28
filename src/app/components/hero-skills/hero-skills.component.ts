@@ -17,10 +17,10 @@ export class HeroSkillsComponent {
   heroSkillsData!: HeroSkillsData;
 
   constructor(private apiService: ApiService) {
-    this.apiService.getData<HeroSkillsData>('skills').subscribe(
+    this.apiService.getLanguageData<HeroSkillsData>('skills').subscribe(
       (data: HeroSkillsData) => {
-      this.heroSkillsData = data
-    })
+        this.heroSkillsData = data
+      })
   }
 }
 
