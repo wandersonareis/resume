@@ -1,20 +1,16 @@
-import { Component, Input } from '@angular/core';
-import { MarkdownPipe } from '../../../shared/pipes/markdown.pipe';
+import { Component, input, Input } from '@angular/core';
+import { SharedModule } from '../../../shared/shared.module';
 
 @Component({
-  selector: 'hero-description',
+  selector: 'hero-descriptions',
   standalone: true,
   imports: [
-    MarkdownPipe
+    SharedModule
   ],
   template: `
-  <div>
-  @for (line of descriptions; track $index) {
-  <p class="text-justify text-base mb-2">{{ line | markdown }}</p>
-  }
-</div>
+<markdown-list [items]="descriptions()" class="flex flex-col gap-2" />
 `
 })
 export class HeroDescriptionComponent {
-  @Input() descriptions: string[] = [];
+  descriptions = input<string[]>([])
 }

@@ -2,9 +2,9 @@
   <div class="flex flex-col-reverse md:flex-row gap-12 max-w-screen-xl">
     <section class="flex flex-col">
       <div class="flex flex-col gap-12">
-        <div class="flex flex-col max-w-screen-md gap-2">
+        <div class="flex flex-col max-w-screen-md gap-4">
           <hero-title [title]="heroCardData.title" />
-          <hero-description [descriptions]="heroCardData.descriptions" />
+          <hero-descriptions [descriptions]="heroCardData.descriptions" />
         </div>
         <hero-location
           [location]="heroCardData.location"
