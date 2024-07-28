@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ApiService } from '../../../services/api.service';
 import { map, Observable } from 'rxjs';
 import { HeroProjectsData } from '../hero-projects.component';
+import { Project } from '../hero-project-card/hero-project-card.component';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,19 @@ export class ProjectsService {
           : data.projectsList
       }))
     );
+  }
+
+  getResumeProjects(size: number = 3): Observable<HeroProjectsData> {
+    return this.apiService.getData<HeroProjectsData>("projects")
+      .pipe(
+        map((data: HeroProjectsData) => ({
+          ...data,
+          projectsList: data.projectsList
+            .filter((project: Project) => project.isImportant)
+            .slice(0, size)
+        })
+        )
+      );
   }
 
 }
