@@ -1,10 +1,11 @@
 <section class="flex flex-col items-center justify-center px-2 py-8 lg:gap-12">
   <div class="flex flex-col items-center gap-6 md:gap-12">
     <title-and-description
-      [title]="heroProjectsData.title"
-      [description]="heroProjectsData.description"
+      [title]="projectData()?.title"
+      [description]="projectData()?.description"
     />
-    @for (project of heroProjectsData.projectsList; track $index; let isOdd=$odd) {
+    @for (project of projectData()?.projectsList; track $index; let isOdd=$odd)
+    {
     <hero-project-card [project]="project" [isOdd]="isOdd" />
     }
   </div>

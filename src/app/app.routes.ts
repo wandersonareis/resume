@@ -1,12 +1,13 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { HeroProjectsComponent } from './components/hero-projects/hero-projects.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { HeroAboutComponent } from './components/hero-about/hero-about.component';
 import { HeroSkillsComponent } from './components/hero-skills/hero-skills.component';
 import { HeroJobsComponent } from './components/hero-jobs/hero-jobs.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { ProjectsPageComponent } from './pages/projects-page/projects-page.component';
+import { ProjectsPageFilteredComponent } from './pages/projects-page-filtered/projects-page-filtered.component';
 
 export const routes: Routes = [
     {
@@ -31,12 +32,12 @@ export const routes: Routes = [
         component: HeroJobsComponent
     },
     {
-        path: 'projects/:tech',
-        component: HeroProjectsComponent
+        path: 'projects',
+        component: ProjectsPageComponent
     },
     {
-        path: 'projects',
-        component: HeroProjectsComponent
+        path: 'projects/:tech',
+        component: ProjectsPageFilteredComponent
     },
     {
         path: 'testimonials',

@@ -11,9 +11,27 @@ import { SafeHtmlPipe } from '../../../../projects/icon/src/lib/safe-html.pipe';
     MarkdownPipe,
     SafeHtmlPipe
   ],
-  templateUrl: './markdown.component.html',
-  styleUrl: './markdown.component.css'
+  template: `
+  <div [innerHTML]="html() | markdown | async | safeHtml">
+</div>
+`
 })
 export class MarkdownComponent {
   html = input<string>("");
+}
+
+@Component({
+  selector: 'markdown-list',
+  standalone: true,
+  imports: [
+    MarkdownComponent
+  ],
+  template: `
+  @for (item of items(); track $index) {
+  <markdown [html]="item"></markdown>
+  }
+`
+})
+export class MarkdownListComponent {
+  items = input<string[]>();
 }

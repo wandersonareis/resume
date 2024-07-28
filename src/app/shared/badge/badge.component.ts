@@ -1,12 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'badge',
   standalone: true,
   imports: [],
-  templateUrl: './badge.component.html',
-  styleUrl: './badge.component.css'
+  template: `
+  <p
+  class="text-base font-medium bg-theme-200 dark:bg-theme-200-dark rounded-xl px-5 py-1 max-w-fit"
+>
+  {{ label() }}
+</p>
+`,
 })
 export class BadgeComponent {
-  @Input() label: string = 'Empty';
+  label = input<string | undefined>();
 }

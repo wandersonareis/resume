@@ -1,12 +1,12 @@
 <div
   class="flex flex-col dark:bg-theme-800 md:flex-row max-w-6xl rounded-xl shadow-xl overflow-hidden"
-  [ngClass]="{ 'md:flex-row-reverse': isOdd }"
+  [ngClass]="{ 'md:flex-row-reverse': isOdd() }"
 >
-  <hero-project-image [url]="project.imageUrl" />
+  <hero-project-image [url]="project()?.imageUrl" />
   <article class="flex flex-col gap-6 p-8 md:p-12 max-w-xl">
-    <p class="text-lg font-semibold">{{ project.title }}</p>
-    <markdown html="{{ project.description }}" />
-    <hero-project-techs [technologies]="project.technologies" />
-    <external-link-button [link]="project.link" />
+    <p class="text-lg font-semibold">{{ project()?.title }}</p>
+    <markdown html="{{ project()?.description }}" />
+    <hero-project-techs-list [technologies]="project()?.technologies" />
+    <external-link-button [link]="project()?.link" />
   </article>
 </div>

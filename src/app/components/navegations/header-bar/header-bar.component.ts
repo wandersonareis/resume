@@ -19,7 +19,7 @@ import { ApiService } from '../../../services/api.service';
 export class HeaderBarComponent {
   headerData!: NavbarData
   constructor(private apiService: ApiService) {
-    this.apiService.getData<NavbarData>('navbar').subscribe(
+    this.apiService.getLanguageData<NavbarData>('navbar').subscribe(
       (data: NavbarData) => {
         this.headerData = data
       })

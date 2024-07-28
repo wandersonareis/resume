@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { BadgeComponent } from '../badge/badge.component';
 
 @Component({
@@ -7,10 +7,18 @@ import { BadgeComponent } from '../badge/badge.component';
   imports: [
     BadgeComponent
   ],
-  templateUrl: './title-and-description.component.html',
-  styleUrl: './title-and-description.component.css'
+  template: `
+  <div class="flex flex-col items-center gap-4">
+  <badge [label]="title()" />
+  @if (description()) {
+  <p class="text-xl text-center font-normal max-w-[34rem]">
+    {{ description() }}
+  </p>
+  }
+</div>
+`
 })
 export class TitleAndDescriptionComponent {
-  @Input() title: string = 'Empty';
-  @Input() description!: string;
+  title = input<string | undefined>()
+  description = input<string | undefined>()
 }
