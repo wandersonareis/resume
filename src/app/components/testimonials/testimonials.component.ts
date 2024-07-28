@@ -23,7 +23,7 @@ export interface TestimonialsData {
 export class TestimonialsComponent {
   testimonialsData!: TestimonialsData;
   constructor(private apiService: ApiService) {
-    this.apiService.getData<TestimonialsData>('testimonials').subscribe((data: TestimonialsData) => {
+    this.apiService.getLanguageData<TestimonialsData>('testimonials').subscribe((data: TestimonialsData) => {
       this.testimonialsData = data;
     });
   }
