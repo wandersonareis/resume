@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 
 @Component({
   selector: 'hero-about-quick-facts-list',
@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './hero-about-quick-facts.component.css'
 })
 export class HeroAboutQuickFactsComponent {
-  @Input() facts: string[] = [];
+  facts = input<string[]>();
 }

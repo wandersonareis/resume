@@ -1,31 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { HeroAboutQuickFactsComponent } from './hero-about-quick-facts/hero-about-quick-facts.component';
-import { HeroAboutPictureComponent } from './hero-about-picture/hero-about-picture.component';
-import { HeroAboutDescriptionComponent } from './hero-about-description/hero-about-description.component';
-import { TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-hero-about',
   standalone: true,
   imports: [
     SharedModule,
-    HeroAboutPictureComponent,
-    HeroAboutDescriptionComponent,
     HeroAboutQuickFactsComponent
   ],
-  templateUrl: './hero-about.component.html',
-  styleUrl: './hero-about.component.css'
+  templateUrl: './hero-about.component.html'
 })
 export class HeroAboutComponent {
-  heroAboutData!: HeroAboutData;
-
-  constructor(private translateService: TranslocoService) {
-    this.translateService.selectTranslateObject<HeroAboutData>('about').subscribe(
-      (data: HeroAboutData) => {
-      this.heroAboutData = data
-    })
-  }
+  aboutData = input<HeroAboutData | null>({} as HeroAboutData);
 }
 
 type AboutDescription = { title: string; descriptions: string[] };

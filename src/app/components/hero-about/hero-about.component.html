@@ -2,25 +2,23 @@
   class="flex flex-col justify-center items-center px-4 py-16 md:px-20 md:py-24 gap-6"
 >
   <div class="flex flex-col gap-6 md:gap-12 md:px-8">
-    <title-and-description [title]="heroAboutData.title" />
+    <title-and-description [title]="aboutData()?.title" />
     <div class="flex flex-col justify-center md:grid md:grid-cols-2 md:gap-12">
-      <hero-about-picture
-        url="{{ heroAboutData.picture }}"
+      <cv-image
+        url="{{ aboutData()?.picture }}"
         altText="Profile picture"
-      ></hero-about-picture>
+      ></cv-image>
       <div class="flex flex-col gap-6 text-justify">
         <h3 class="text-theme-900 dark:text-theme-900-dark">
-          {{ heroAboutData.description.title }}
+          {{ aboutData()?.description?.title }}
         </h3>
-        <hero-about-description
-          [descriptions]="heroAboutData.description.descriptions"
-        />
-        <p>{{ heroAboutData.quickFacts.title }}</p>
+        <markdown-list [items]="aboutData()?.description?.descriptions" class="flex flex-col gap-2" />
+        <p>{{ aboutData()?.quickFacts?.title }}</p>
         <hero-about-quick-facts-list
-          [facts]="heroAboutData.quickFacts.facts"
+          [facts]="aboutData()?.quickFacts?.facts"
         ></hero-about-quick-facts-list>
         <p class="font-semibold text-theme-600 dark:text-theme-600-dark">
-          {{ heroAboutData.thanks }}
+          {{ aboutData()?.thanks }}
         </p>
       </div>
     </div>
