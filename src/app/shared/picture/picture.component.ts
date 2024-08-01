@@ -5,14 +5,18 @@ import { Component, input, Input } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-  @if (url()) {
-    <figure class="max-w-md">
-    <img [src]="url()" [alt]="alt()" />
-</figure>
+  @if (image()?.url) {
+  <figure class="max-w-md">
+    <img [src]="image()?.url" [alt]="image()?.alt || 'My picture'" />
+  </figure>
   }
 `
 })
 export class PictureComponent {
-  url = input<string | undefined>();
-  alt = input<string>("Hero Image");
+  image = input<Image | undefined>();
+}
+
+export type Image = {
+  url: string;
+  alt: string;
 }
