@@ -5,17 +5,15 @@
     <title-and-description [title]="aboutData()?.title" />
     <div class="flex flex-col justify-center md:grid md:grid-cols-2 md:gap-12">
       <cv-image
-        url="{{ aboutData()?.picture }}"
-        altText="Profile picture"
+        [image]="aboutData()?.image"
       ></cv-image>
       <div class="flex flex-col gap-6 text-justify">
         <h3 class="text-theme-900 dark:text-theme-900-dark">
           {{ aboutData()?.description?.title }}
         </h3>
         <markdown-list [items]="aboutData()?.description?.descriptions" class="flex flex-col gap-2" />
-        <p>{{ aboutData()?.quickFacts?.title }}</p>
         <hero-about-quick-facts-list
-          [facts]="aboutData()?.quickFacts?.facts"
+          [quickFacts]="aboutData()?.quickFacts"
         ></hero-about-quick-facts-list>
         <p class="font-semibold text-theme-600 dark:text-theme-600-dark">
           {{ aboutData()?.thanks }}

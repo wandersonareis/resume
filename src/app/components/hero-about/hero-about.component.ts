@@ -1,6 +1,7 @@
 import { Component, input } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
-import { HeroAboutQuickFactsComponent } from './hero-about-quick-facts/hero-about-quick-facts.component';
+import { AboutQuickFacts, HeroAboutQuickFactsComponent } from './hero-about-quick-facts/hero-about-quick-facts.component';
+import { Image } from '../../shared/picture/picture.component';
 
 @Component({
   selector: 'app-hero-about',
@@ -16,11 +17,10 @@ export class HeroAboutComponent {
 }
 
 type AboutDescription = { title: string; descriptions: string[] };
-type AboutQuickFacts = { title: string; facts: string[] };
 export interface HeroAboutData {
   title: string;
   description: AboutDescription;
-  picture: string;
+  image: Image;
   quickFacts: AboutQuickFacts;
   thanks: string;
 }
