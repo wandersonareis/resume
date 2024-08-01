@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeroComponent, HeroImageComponent, HeroLocationComponent } from './hero.component';
+import { HeroComponent, HeroLocationComponent } from './hero.component';
 
 describe('HeroComponent', () => {
   let component: HeroComponent;
@@ -13,26 +13,6 @@ describe('HeroComponent', () => {
     .compileComponents();
 
     fixture = TestBed.createComponent(HeroComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
-
-describe('HeroImageComponent', () => {
-  let component: HeroImageComponent;
-  let fixture: ComponentFixture<HeroImageComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [HeroImageComponent]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(HeroImageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

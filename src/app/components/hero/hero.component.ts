@@ -2,21 +2,7 @@ import { Component, input } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { Social } from '../../shared/social-links/social-links.component';
 import { TranslocoService } from '@jsverse/transloco';
-
-@Component({
-  selector: 'hero-image',
-  standalone: true,
-  imports: [],
-  template: `
-  <Figure class="max-w-md">
-  <img [src]="url()" [alt]="alt()" />
-</Figure>
-`
-})
-export class HeroImageComponent {
-  url = input<string | undefined>("assets/images/hero.png")
-  alt = input<string>("Hero Image")
-}
+import { Image } from '../../shared/picture/picture.component';
 
 @Component({
   selector: 'hero-location',
@@ -40,7 +26,6 @@ export class HeroLocationComponent {
   standalone: true,
   imports: [
     HeroLocationComponent,
-    HeroImageComponent,
     SharedModule
   ],
   templateUrl: './hero.component.html',
@@ -59,7 +44,7 @@ export class HeroComponent {
 export interface HeroCardData {
   title: string;
   descriptions: string[];
-  heroImage: string;
+  image: Image;
   location: HeroLocation;
   social: Social;
 }

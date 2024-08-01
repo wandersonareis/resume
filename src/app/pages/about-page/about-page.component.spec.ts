@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeroAboutPictureComponent } from './hero-about-picture.component';
+import { AboutPageComponent } from './about-page.component';
 
-describe('HeroAboutPictureComponent', () => {
-  let component: HeroAboutPictureComponent;
-  let fixture: ComponentFixture<HeroAboutPictureComponent>;
+describe('AboutPageComponent', () => {
+  let component: AboutPageComponent;
+  let fixture: ComponentFixture<AboutPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HeroAboutPictureComponent]
+      imports: [AboutPageComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HeroAboutPictureComponent);
+    fixture = TestBed.createComponent(AboutPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
