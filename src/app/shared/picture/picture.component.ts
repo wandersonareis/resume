@@ -18,5 +18,5 @@ export class PictureComponent {
 
 export type Image = {
   url: string;
-  alt: string;
+  alt?: string;
 }
