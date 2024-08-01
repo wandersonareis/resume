@@ -4,12 +4,14 @@ import { HomeComponent } from './home/home.component';
 import { ProjectsPageComponent } from './projects-page/projects-page.component';
 import { ProjectsPageFilteredComponent } from './projects-page-filtered/projects-page-filtered.component';
 import { AboutPageComponent } from './about-page/about-page.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 const imports = [
   HomeComponent,
+  AboutPageComponent,
+  ProfilePageComponent,
   ProjectsPageComponent,
   ProjectsPageFilteredComponent,
-  AboutPageComponent
 ]
 
 @NgModule({
