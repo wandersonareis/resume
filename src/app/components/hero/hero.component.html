@@ -3,16 +3,16 @@
     <section class="flex flex-col">
       <div class="flex flex-col gap-12">
         <div class="flex flex-col max-w-screen-md gap-4">
-          <h1>{{ heroCardData.title }}</h1>
+          <h1>{{ heroCardData()?.title }}</h1>
           <markdown-list
-            [items]="heroCardData.descriptions"
+            [items]="heroCardData()?.descriptions"
             class="flex flex-col gap-2"
           />
         </div>
-        <hero-location [location]="heroCardData.location"></hero-location>
-        <social-links [links]="heroCardData.social.links"></social-links>
+        <hero-location [location]="heroCardData()?.location"></hero-location>
+        <social-links [links]="heroCardData()?.social?.links"></social-links>
       </div>
     </section>
-    <cv-image [image]="heroCardData.image"></cv-image>
+    <cv-image [image]="heroCardData()?.image"></cv-image>
   </div>
 </div>
