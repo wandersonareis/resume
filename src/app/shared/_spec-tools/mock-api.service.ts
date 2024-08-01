@@ -62,11 +62,14 @@ export const mocked_projects: HeroProjectsData = {
             "linkIcon": "assets/icons/external-link.svg"
         }
     ]
-}
+} as const
 
 export const mocked_about_me: HeroAboutData = {
       title: "Sobre mim:",
-      picture: "assets/images/work.png",
+      image: {
+        url: "assets/images/work.png",
+        alt: "Profile Image"
+      },
       description: {
         title: "Curioso sobre mim? Aqui está:",
         descriptions: [
@@ -85,4 +88,4 @@ export const mocked_about_me: HeroAboutData = {
         ]
       },
       thanks: "Obrigado por ler!"
-    }
+    } as const
