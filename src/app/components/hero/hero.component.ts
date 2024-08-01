@@ -28,8 +28,7 @@ export class HeroLocationComponent {
     HeroLocationComponent,
     SharedModule
   ],
-  templateUrl: './hero.component.html',
-  styleUrl: './hero.component.css'
+  templateUrl: './hero.component.html'
 })
 export class HeroComponent {
   heroCardData!: HeroCardData;
