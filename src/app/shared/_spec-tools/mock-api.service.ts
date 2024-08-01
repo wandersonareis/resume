@@ -1,3 +1,4 @@
+import { HeroAboutData } from "../../components/hero-about/hero-about.component"
 import { HeroProjectsData } from "../../components/hero-projects/hero-projects.component"
 
 export const mocked_projects: HeroProjectsData = {
@@ -61,4 +62,30 @@ export const mocked_projects: HeroProjectsData = {
             "linkIcon": "assets/icons/external-link.svg"
         }
     ]
-}
+} as const
+
+export const mocked_about_me: HeroAboutData = {
+      title: "Sobre mim:",
+      image: {
+        url: "assets/images/work.png",
+        alt: "Profile Image"
+      },
+      description: {
+        title: "Curioso sobre mim? Aqui está:",
+        descriptions: [
+          "lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+          "lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+          "lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae."
+        ]
+      },
+      quickFacts: {
+        title: "lorem ipsum dolor sit amet",
+        facts: [
+          "E. Ciência da Computação",
+          "Desenvolvedor Full Stack",
+          "Aprendiz ávido",
+          "Resiliente"
+        ]
+      },
+      thanks: "Obrigado por ler!"
+    } as const

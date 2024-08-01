@@ -11,12 +11,14 @@ import { ExternalLinkButtonComponent } from './external-link-button/external-lin
 import { AvatarComponent } from './avatar/avatar.component';
 import { LanguageSelectorComponent } from './language-selector/language-selector.component';
 import { MarkdownComponent, MarkdownListComponent } from './markdown/markdown.component';
+import { PictureComponent } from './picture/picture.component';
 
 
 const imports = [
   IconModule,
   BadgeComponent,
   AvatarComponent,
+  PictureComponent,
   MailLinkComponent,
   MarkdownComponent,
   CopyButtonComponent,
