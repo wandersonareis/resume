@@ -24,10 +24,6 @@ export const routes: Routes = [
         component: AboutPageComponent
     },
     {
-        path: 'skills',
-        component: HeroSkillsComponent
-    },
-    {
         path: 'experiences',
         component: HeroJobsComponent
     },
