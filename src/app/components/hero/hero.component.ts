@@ -12,13 +12,13 @@ import { Image } from '../../shared/picture/picture.component';
   ],
   template: `
   <div class="flex justify-center md:justify-start items-center space-x-1">
-  <icon [name]="location().icon" />
-  <span>{{ location().text }}</span>
+  <icon [name]="location()?.icon" />
+  <span>{{ location()?.text }}</span>
 </div>
 `
 })
 export class HeroLocationComponent {
-  location = input<HeroLocation>({} as HeroLocation);
+  location = input<HeroLocation | undefined>({} as HeroLocation);
 }
 
 @Component({
@@ -28,17 +28,10 @@ export class HeroLocationComponent {
     HeroLocationComponent,
     SharedModule
   ],
-  templateUrl: './hero.component.html',
-  styleUrl: './hero.component.css'
+  templateUrl: './hero.component.html'
 })
 export class HeroComponent {
-  heroCardData!: HeroCardData;
-  constructor(private translateService: TranslocoService) {
-    this.translateService.selectTranslateObject<HeroCardData>('profile').subscribe(
-      (data: HeroCardData) => {
-      this.heroCardData = data
-    })
-  }
+  heroCardData = input<HeroCardData | null>({} as HeroCardData);
 }
 
 export interface HeroCardData {

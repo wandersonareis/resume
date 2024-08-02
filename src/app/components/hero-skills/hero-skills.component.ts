@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { HeroSkillComponent } from './hero-skill/hero-skill.component';
 import { ApiService } from '../../services/api.service';
@@ -14,14 +14,7 @@ import { ApiService } from '../../services/api.service';
   styleUrl: './hero-skills.component.css'
 })
 export class HeroSkillsComponent {
-  heroSkillsData!: HeroSkillsData;
-
-  constructor(private apiService: ApiService) {
-    this.apiService.getLanguageData<HeroSkillsData>('skills').subscribe(
-      (data: HeroSkillsData) => {
-        this.heroSkillsData = data
-      })
-  }
+  skillsData = input<HeroSkillsData | null>({} as HeroSkillsData);
 }
 
 type Skill = { name: string, icon: string };

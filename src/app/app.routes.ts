@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { HeroComponent } from './components/hero/hero.component';
 import { HeroSkillsComponent } from './components/hero-skills/hero-skills.component';
 import { HeroJobsComponent } from './components/hero-jobs/hero-jobs.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
@@ -8,6 +7,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ProjectsPageComponent } from './pages/projects-page/projects-page.component';
 import { ProjectsPageFilteredComponent } from './pages/projects-page-filtered/projects-page-filtered.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 
 export const routes: Routes = [
     {
@@ -17,15 +17,11 @@ export const routes: Routes = [
     },
     {
         path: 'profile',
-        component: HeroComponent
+        component: ProfilePageComponent
     },
     {
         path: 'about',
         component: AboutPageComponent
-    },
-    {
-        path: 'skills',
-        component: HeroSkillsComponent
     },
     {
         path: 'experiences',
