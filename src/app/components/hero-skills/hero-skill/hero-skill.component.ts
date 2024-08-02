@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { SharedModule } from '../../../shared/shared.module';
 
 @Component({
@@ -7,11 +7,22 @@ import { SharedModule } from '../../../shared/shared.module';
   imports: [
     SharedModule
   ],
-  templateUrl: './hero-skill.component.html',
-  styleUrl: './hero-skill.component.css'
+  template: `
+  <div
+  class="flex flex-col items-center p-2 rounded-md gap-2"
+>
+  @if (skill()) {
+  <icon [name]="skill()?.icon" [size]="iconSizeDefault" class="text-theme- dark:text-theme-900-dark"></icon>
+  <span class="text-lg font-normal">{{ skill()?.name }}</span>
+  } @else {
+  <p>No skills</p>
+  }
+</div>
+`
 })
 export class HeroSkillComponent {
-  @Input() name!: string;
-  @Input() icon!: string;
-  @Input() iconSize: number = 75;
+  skill = input<Skill>();
+  iconSizeDefault: number = this.skill()?.iconSize ?? 75;
 }
+
+export type Skill = { name: string, icon: string, iconSize?: number };
