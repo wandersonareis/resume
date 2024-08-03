@@ -15,7 +15,7 @@ export class ContactRowComponent {
 }
 
 export interface Contact {
-  isMail?: string;
+  isMail?: boolean;
   text: string;
   icon: string;
   url?: string;
