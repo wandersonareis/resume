@@ -14,7 +14,6 @@ import { PagesModule } from '../pages.module';
   template: `
 <app-profile-page />
 <app-about-page />
-<app-hero-skills />
 <app-hero-jobs />
 <app-resume-hero-projects />
 <app-testimonials />

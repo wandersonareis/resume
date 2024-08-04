@@ -1,19 +1,19 @@
 <div class="flex justify-center items-center gap-3">
   <icon
-    [name]="contact.icon"
+    [name]="contact()?.icon"
     size="32"
     class="text-theme-600 dark:text-theme-600-dark"
   ></icon>
-  @if (contact.isMail) {
-  <mail-link [mail]="contact.text"></mail-link>
+  @if (contact()?.isMail) {
+  <mail-link [mail]="contact()?.text ?? ''" />
   }@else {
   <h2 class="text-theme-900 dark:text-theme-900-dark">
-    {{ contact.text }}
+    {{ contact()?.text }}
   </h2>
   }
 
   <copy-button
-    [target]="contact.text"
-    icon="{{ contact.copyIcon }}"
+    [target]="contact()?.text ?? ''"
+    icon="{{ contact()?.copyIcon }}"
   ></copy-button>
 </div>

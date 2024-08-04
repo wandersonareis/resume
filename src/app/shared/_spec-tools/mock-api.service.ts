@@ -1,3 +1,4 @@
+import { ContactData } from "../../components/contact/contact.component";
 import { HeroAboutData } from "../../components/hero-about/hero-about.component"
 import { HeroProjectsData } from "../../components/hero-projects/hero-projects.component"
 import { HeroSkillsData } from "../../components/hero-skills/hero-skills.component";
@@ -143,3 +144,31 @@ export const mocked_about_me: HeroAboutData = {
   },
   thanks: "Obrigado por ler!"
 } as const
+
+export const mocked_contact: ContactData = {
+  title: "Entre em contato",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+  contacts: [
+    {
+      isMail: true,
+      icon: "ph:envelope-simple-light",
+      text: "wandersonfrost8@hotmail.com",
+      copyIcon: "ph:copy"
+    }
+  ],
+  social: {
+    text: "Você também pode me encontrar nessas plataformas!",
+    links: [
+      {
+        text: "GitHub",
+        url: "https://www.linkedin.com/in/wandersonareis/",
+        icon: "simple-icons:github"
+      },
+      {
+        text: "LinkedIn",
+        url: "https://www.linkedin.com/in/wandersonareis/",
+        icon: "simple-icons:linkedin"
+      }
+    ]
+  }
+}

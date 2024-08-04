@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { SharedModule } from '../../../shared/shared.module';
 
 @Component({
@@ -7,15 +7,14 @@ import { SharedModule } from '../../../shared/shared.module';
   imports: [
     SharedModule
   ],
-  templateUrl: './contact-row.component.html',
-  styleUrl: './contact-row.component.css'
+  templateUrl: './contact-row.component.html'
 })
 export class ContactRowComponent {
-  @Input() contact!: Contact;
+  contact = input<Contact>();
 }
 
 export interface Contact {
-  isMail?: string;
+  isMail?: boolean;
   text: string;
   icon: string;
   url?: string;

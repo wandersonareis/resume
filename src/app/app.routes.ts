@@ -8,6 +8,7 @@ import { ProjectsPageComponent } from './pages/projects-page/projects-page.compo
 import { ProjectsPageFilteredComponent } from './pages/projects-page-filtered/projects-page-filtered.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 
 export const routes: Routes = [
     {
@@ -41,7 +42,7 @@ export const routes: Routes = [
     },
     {
         path: 'contact',
-        component: ContactComponent
+        component: ContactPageComponent
     },
     {
         path: '**',

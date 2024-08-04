@@ -2,18 +2,18 @@
   class="flex flex-col justify-around items-center min-w-[340px] min-h-[472px] px-4 py-8"
 >
   <title-and-description
-    [title]="contactData.title"
-    [description]="contactData.description"
+    [title]="contactData()?.title"
+    [description]="contactData()?.description"
   ></title-and-description>
   <div class="flex flex-col items-center gap-12">
     <div class="flex flex-col justify-between">
-      @for (contact of contactData.contacts; track $index) {
+      @for (contact of contactData()?.contacts; track $index) {
       <contact-row [contact]="contact"></contact-row>
       }
     </div>
     <div class="flex flex-col items-center justify-between gap-2">
-      <p class="text-base">{{ contactData.social.text }}</p>
-      <social-links [links]="contactData.social.links"></social-links>
+      <p class="text-base">{{ contactData()?.social?.text }}</p>
+      <social-links [links]="contactData()?.social?.links"></social-links>
     </div>
   </div>
 </section>
