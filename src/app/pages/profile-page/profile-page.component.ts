@@ -15,13 +15,13 @@ import { HeroSkillsData } from '../../components/hero-skills/hero-skills.compone
 ],
   template: `
   <app-hero [heroCardData]="heroCardData$ | async" />
-  <app-hero-skills [skillsData]="skillsData | async" />
+  <app-hero-skills [skillsData]="skillsData$ | async" />
   `
 })
 export class ProfilePageComponent implements OnInit {
   heroCardData$ = new BehaviorSubject<HeroCardData>({} as HeroCardData);
 
-  skillsData = new BehaviorSubject<HeroSkillsData>({} as HeroSkillsData);
+  skillsData$ = new BehaviorSubject<HeroSkillsData>({} as HeroSkillsData);
 
   constructor(private apiService: ApiService) { }
 
@@ -32,7 +32,7 @@ export class ProfilePageComponent implements OnInit {
 
     this.apiService.getLanguageData<HeroSkillsData>('skills').subscribe(
       (data: HeroSkillsData) => {
-        this.skillsData.next(data)
+        this.skillsData$.next(data)
       })
   }
 }
