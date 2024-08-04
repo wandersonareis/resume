@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { MailToPipe } from '../pipes/mail-to.pipe';
 
 @Component({
@@ -7,9 +7,16 @@ import { MailToPipe } from '../pipes/mail-to.pipe';
   imports: [
     MailToPipe
   ],
-  templateUrl: './mail-link.component.html',
-  styleUrl: './mail-link.component.css'
+  template: `
+  <a [href]="mail() | mailTo" class="text-theme-900">
+  <h2
+    class="hover:text-theme-500 dark:hover:text-theme-600 hover:underline active:text-theme-500 active:underline"
+  >
+    {{ mail() }}
+  </h2>
+</a>
+  `
 })
 export class MailLinkComponent {
-  @Input() mail: string = '';
+  mail = input<string>("");
 }
