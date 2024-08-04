@@ -19,7 +19,6 @@
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
-    "@iconify-json/ci": "^1.1.13",
     "@iconify-json/devicon": "^1.1.47",
     "@iconify-json/ph": "^1.1.13",
     "@iconify/icons-simple-icons": "^1.2.74",
