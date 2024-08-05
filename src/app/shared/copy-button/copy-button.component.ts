@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { IconModule } from '../../../../projects/icon/src/public-api';
 
@@ -9,10 +9,16 @@ import { IconModule } from '../../../../projects/icon/src/public-api';
     IconModule,
     ClipboardModule
   ],
-  templateUrl: './copy-button.component.html',
-  styleUrl: './copy-button.component.css'
+  template: `
+  <icon
+  [cdkCopyToClipboard]="target()"
+  [name]="icon()"
+  size="32"
+  class="text-theme-600 dark:text-theme-500-dark hover:text-theme-500 dark:hover:text-theme-600 cursor-pointer"
+></icon>
+`
 })
 export class CopyButtonComponent {
-  @Input() target: string = '';
-  @Input() icon: string = 'ph:copy';
+  target = input<string>('');
+  icon = input<string | undefined>("ph:copy");
 }
