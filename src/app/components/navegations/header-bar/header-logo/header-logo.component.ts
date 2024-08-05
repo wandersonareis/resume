@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../../../shared/shared.module';
 
@@ -13,7 +13,7 @@ import { SharedModule } from '../../../../shared/shared.module';
   styleUrl: './header-logo.component.css'
 })
 export class HeaderLogoComponent {
-  @Input() logo!: string;
-  @Input() label: string = '';
-  @Input() routerLink: string = '/';
+  logo = input<string>('');
+  label = input<string>('');
+  routerLink = input<string>('/');
 }
