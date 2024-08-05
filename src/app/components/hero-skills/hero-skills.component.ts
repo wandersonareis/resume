@@ -10,8 +10,7 @@ import { ApiService } from '../../services/api.service';
     SharedModule,
     HeroSkillComponent
   ],
-  templateUrl: './hero-skills.component.html',
-  styleUrl: './hero-skills.component.css'
+  templateUrl: './hero-skills.component.html'
 })
 export class HeroSkillsComponent {
   skillsData = input<HeroSkillsData | null>({} as HeroSkillsData);
