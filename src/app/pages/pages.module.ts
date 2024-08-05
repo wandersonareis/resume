@@ -6,9 +6,11 @@ import { ProjectsPageFilteredComponent } from './projects-page-filtered/projects
 import { AboutPageComponent } from './about-page/about-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
+import { JobsPageComponent } from './jobs-page/jobs-page.component';
 
 const imports = [
   HomeComponent,
+  JobsPageComponent,
   AboutPageComponent,
   ContactPageComponent,
   ProfilePageComponent,
