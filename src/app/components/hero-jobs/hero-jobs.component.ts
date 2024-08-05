@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { HeroJobCardComponent } from './hero-job-card/hero-job-card.component';
 import { TranslocoService } from '@jsverse/transloco';
@@ -10,18 +10,10 @@ import { TranslocoService } from '@jsverse/transloco';
     SharedModule,
     HeroJobCardComponent
   ],
-  templateUrl: './hero-jobs.component.html',
-  styleUrl: './hero-jobs.component.css'
+  templateUrl: './hero-jobs.component.html'
 })
 export class HeroJobsComponent {
-  jobsData!: JobsData;
-
-  constructor(private translateService: TranslocoService) {
-    this.translateService.selectTranslateObject<JobsData>('experiences').subscribe(
-      (data: JobsData) => {
-      this.jobsData = data
-    })
-  }
+  jobsData = input<JobsData | null>({} as JobsData);
 }
 
 type Job = {
@@ -32,7 +24,7 @@ type Job = {
   descriptions: string[]
 }
 
-interface JobsData {
+export interface JobsData {
   title: string;
   description: string;
   jobs: Job[];
