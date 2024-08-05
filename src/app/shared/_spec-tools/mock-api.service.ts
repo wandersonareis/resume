@@ -1,5 +1,6 @@
 import { ContactData } from "../../components/contact/contact.component";
 import { HeroAboutData } from "../../components/hero-about/hero-about.component"
+import { JobsData } from "../../components/hero-jobs/hero-jobs.component";
 import { HeroProjectsData } from "../../components/hero-projects/hero-projects.component"
 import { HeroSkillsData } from "../../components/hero-skills/hero-skills.component";
 import { HeroCardData } from "../../components/hero/hero.component";
@@ -53,6 +54,42 @@ export const mocked_skills: HeroSkillsData = {
     {
       name: "C#",
       icon: "devicon:csharp"
+    }
+  ]
+} as const;
+export const mocked_jobs: JobsData = {
+  title: "Experiências",
+  description: "Aqui está um resumo rápido das minhas experiências mais recentes:",
+  jobs: [
+    {
+      company: "Ella Cook",
+      companyLogo: "https://www.blip.ai/wp-content/uploads/2023/06/logotipo.svg",
+      title: "Ireland",
+      duration: "Jun 2023 - Jul 2024",
+      descriptions: [
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;",
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;",
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;",
+      ]
+    },
+    {
+      company: "Honduras",
+      companyLogo: "assets/icons/conservo.png",
+      title: "Hannah Gonzalez",
+      duration: "Mai 2016 - Jun 2020",
+      descriptions: [
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;",
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;",
+      ]
+    },
+    {
+      company: "Lan House",
+      companyLogo: "assets/icons/casarao.svg",
+      title: "Russell Rodriguez",
+      duration: "Mai 2012 - Set 2015",
+      descriptions: [
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;",
+      ]
     }
   ]
 } as const;
