@@ -3,10 +3,10 @@
 >
   <div class="flex flex-wrap items-center justify-between px-4">
     <header-logo
-      [logo]="headerData.personalLogo"
-      [label]="headerData.label"
-      [routerLink]="headerData.defaultUrl"
+      [logo]="headerData().personalLogo"
+      [label]="headerData().label"
+      [routerLink]="headerData().defaultUrl"
     ></header-logo>
-    <header-menu [navLinks]="headerData.navLinks" [downloadCv]="headerData.downloadCv" />
+    <header-menu [navLinks]="headerData().navLinks" [downloadCv]="headerData().downloadCv" />
   </div>
 </nav>
