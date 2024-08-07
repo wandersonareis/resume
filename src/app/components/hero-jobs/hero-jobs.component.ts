@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, input, OnInit, signal } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { HeroJobCardComponent } from './hero-job-card/hero-job-card.component';
 import { ApiService } from '../../services/api.service';
@@ -12,13 +12,10 @@ import { ApiService } from '../../services/api.service';
   ],
   templateUrl: './hero-jobs.component.html'
 })
-export class HeroJobsComponent implements OnInit {
+export class HeroJobsComponent {
   apiService = inject(ApiService);
-  jobsData = signal<JobsData>({} as JobsData);
+  jobsData = input<JobsData | null>({} as JobsData);
 
-  ngOnInit(): void {
-    this.apiService.getLanguageData<JobsData>('experiences').subscribe(this.jobsData.set)
-  }
 }
 
 type Job = {

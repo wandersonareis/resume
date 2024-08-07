@@ -20,5 +20,5 @@ import { IconModule } from '../../../../projects/icon/src/public-api';
 })
 export class CopyButtonComponent {
   target = input<string>('');
-  icon = input<string>('ph:copy');
+  icon = input<string | undefined>('ph:copy');
 }
