@@ -5,24 +5,24 @@
     class="flex flex-col md:flex-row md:space-x-8 w-full justify-center items-center"
   >
     <p>
-      <span>©️ {{ footerData.designYear }} | </span>
+      <span>©️ {{ footerData().designYear }} | </span>
       <a
-        [href]="footerData.designLink"
+        [href]="footerData().designLink"
         class="text-base font-medium underline after:ml-1"
         target="_blank"
         >Designed by</a
       >
-      <span>{{ footerData.designBy }}</span>
+      <span>{{ footerData().designBy }}</span>
     </p>
     <p class="md:before:mr-1">
-      <span>©️ {{ footerData.codeYear }} | </span>
+      <span>©️ {{ footerData().codeYear }} | </span>
       <a
-        [href]="footerData.codeLink"
+        [href]="footerData().codeLink"
         class="text-base font-medium underline after:ml-1"
         target="_blank"
         >coded by</a
       >
-      <span>️️{{ footerData.codedBy }}</span>
+      <span>️️{{ footerData().codedBy }}</span>
     </p>
   </div>
 </div>
