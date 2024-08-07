@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { Testimonial, TestimonialsCardsComponent } from './testimonials-cards/testimonials-cards.component';
 import { ApiService } from '../../services/api.service';
@@ -18,13 +18,13 @@ export interface TestimonialsData {
     TestimonialsCardsComponent,
   ],
   templateUrl: './testimonials.component.html',
-  styleUrl: './testimonials.component.css'
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TestimonialsComponent {
-  testimonialsData!: TestimonialsData;
-  constructor(private apiService: ApiService) {
-    this.apiService.getLanguageData<TestimonialsData>('testimonials').subscribe((data: TestimonialsData) => {
-      this.testimonialsData = data;
-    });
+export class TestimonialsComponent implements OnInit {
+  apiService = inject(ApiService);
+  testimonialsData = signal<TestimonialsData>({} as TestimonialsData);
+
+  ngOnInit(): void {
+    this.apiService.getLanguageData<TestimonialsData>('testimonials').subscribe(this.testimonialsData.set)
   }
 }

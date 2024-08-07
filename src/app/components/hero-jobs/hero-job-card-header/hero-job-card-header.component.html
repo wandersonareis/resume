@@ -3,13 +3,13 @@
 >
   <figure>
     <img
-      [src]="job.companyLogo"
-      [alt]="job.company + ' logo'"
+      [src]="job().companyLogo"
+      [alt]="job().company + ' logo'"
       loading="lazy"
       width="85px"
       height="85px"
     />
   </figure>
-  <h3 class="text-lg order-2 md:order-1">{{ job.title }}</h3>
-  <time class="text-base order-1 md:order-2">{{ job.duration }}</time>
+  <h3 class="text-lg order-2 md:order-1">{{ job().title }}</h3>
+  <time class="text-base order-1 md:order-2">{{ job().duration }}</time>
 </div>

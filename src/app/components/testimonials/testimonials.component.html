@@ -4,11 +4,11 @@
 >
   <div class="flex flex-col items-center gap-4">
     <title-and-description
-      [title]="testimonialsData.title"
-      [description]="testimonialsData.description"
+      [title]="testimonialsData().title"
+      [description]="testimonialsData().description"
     />
   </div>
   <div class="flex flex-col justify-center items-center gap-6">
-    <testimonials-cards [testimonials]="testimonialsData.testimonials" />
+    <testimonials-cards [testimonials]="testimonialsData().testimonials" />
   </div>
 </section>

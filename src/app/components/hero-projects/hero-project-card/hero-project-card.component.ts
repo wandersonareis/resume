@@ -52,8 +52,7 @@ export class HeroProjectTechsListComponent {
     HeroProjectTechsListComponent,
     HeroProjectImageComponent
   ],
-  templateUrl: './hero-project-card.component.html',
-  styleUrl: './hero-project-card.component.css'
+  templateUrl: './hero-project-card.component.html'
 })
 export class HeroProjectCardComponent {
   project = input<Project>();

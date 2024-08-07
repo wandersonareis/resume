@@ -1,12 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'testimonials-content',
   standalone: true,
   imports: [],
-  templateUrl: './testimonials-content.component.html',
-  styleUrl: './testimonials-content.component.css'
+  template: `
+  <p class="text-justify text-base indent-8 text-clip whitespace-pre-line">
+  {{ content() }}
+</p>
+`
 })
 export class TestimonialsContentComponent {
-  @Input() content!: string
+  content = input<string>();
 }

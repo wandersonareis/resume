@@ -1,13 +1,18 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'hero-project-image',
   standalone: true,
   imports: [],
-  templateUrl: './hero-project-image.component.html',
-  styleUrl: './hero-project-image.component.css'
+  template: `
+  <figure
+  class="inline-flex w-full h-full items-center p-12 bg-theme-100 dark:bg-theme-200-dark max-w-[30rem]"
+>
+  <img [src]="url()" [alt]="alt()" class="object-cover rounded-lg" />
+</figure>
+`
 })
 export class HeroProjectImageComponent {
-  @Input() url!: string;
-  @Input() alt: string = "Project picture";
+  url = input<string | undefined>("assets/images/project-a.png");
+  alt = input<string>("Project Image");
 }

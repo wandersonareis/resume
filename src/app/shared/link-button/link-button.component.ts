@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { IconModule } from '../../../../projects/icon/src/public-api';
 
 @Component({
@@ -11,7 +11,10 @@ import { IconModule } from '../../../../projects/icon/src/public-api';
   styleUrl: './link-button.component.css'
 })
 export class LinkButtonComponent {
-  @Input() downloadCv!: LinkButton
+  downloadCv = input<LinkButton>({
+    label: 'Download CV',
+    url: 'javascript:void(0)',
+  } as LinkButton);
 }
 
 export interface LinkButton {

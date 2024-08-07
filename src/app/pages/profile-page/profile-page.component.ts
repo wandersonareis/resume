@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { ComponentsModule } from '../../components/components.module';
 import { HeroCardData } from '../../components/hero/hero.component';
-import { BehaviorSubject } from 'rxjs';
-import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
 import { HeroSkillsData } from '../../components/hero-skills/hero-skills.component';
 
@@ -10,29 +8,22 @@ import { HeroSkillsData } from '../../components/hero-skills/hero-skills.compone
   selector: 'app-profile-page',
   standalone: true,
   imports: [
-    CommonModule,
     ComponentsModule,
-],
+  ],
   template: `
-  <app-hero [heroCardData]="heroCardData$ | async" />
-  <app-hero-skills [skillsData]="skillsData$ | async" />
+  <app-hero [heroCardData]="heroCardData()" />
+  <app-hero-skills [skillsData]="skillsData()" />
   `
 })
 export class ProfilePageComponent implements OnInit {
-  heroCardData$ = new BehaviorSubject<HeroCardData>({} as HeroCardData);
-
-  skillsData$ = new BehaviorSubject<HeroSkillsData>({} as HeroSkillsData);
-
-  constructor(private apiService: ApiService) { }
+  apiService = inject(ApiService);
+  
+  heroCardData = signal<HeroCardData>({} as HeroCardData);
+  skillsData = signal<HeroSkillsData>({} as HeroSkillsData);
 
   ngOnInit(): void {
-    this.apiService.getLanguageData<HeroCardData>('profile').subscribe(data => {
-      this.heroCardData$.next(data);
-    });
+    this.apiService.getLanguageData<HeroCardData>('profile').subscribe(this.heroCardData.set);
 
-    this.apiService.getLanguageData<HeroSkillsData>('skills').subscribe(
-      (data: HeroSkillsData) => {
-        this.skillsData$.next(data)
-      })
+    this.apiService.getLanguageData<HeroSkillsData>('skills').subscribe(this.skillsData.set);
   }
 }

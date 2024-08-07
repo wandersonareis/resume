@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { SharedModule } from '../../../shared/shared.module';
 import { RouterModule } from '@angular/router';
 
@@ -9,9 +9,16 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     SharedModule
   ],
-  templateUrl: './hero-project-techs.component.html',
-  styleUrl: './hero-project-techs.component.css'
+  template: `
+  <div class="flex flex-wrap gap-2">
+  @for (tech of technologies(); track $index) {
+  <a type="button" [routerLink]="['/projects', tech]">
+    <badge [label]="tech" />
+  </a>
+  }
+</div>
+`
 })
 export class HeroProjectTechsComponent {
-  @Input() technologies: string[] = [];
+  technologies = input<string[] | undefined>();
 }
