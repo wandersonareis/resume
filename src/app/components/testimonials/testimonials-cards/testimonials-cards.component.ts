@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { SharedModule } from '../../../shared/shared.module';
 import { TestimonialsContentComponent } from '../testimonials-content/testimonials-content.component';
 import { TestimonialsFooterComponent } from '../testimonials-footer/testimonials-footer.component';
@@ -11,11 +11,10 @@ import { TestimonialsFooterComponent } from '../testimonials-footer/testimonials
     TestimonialsContentComponent,
     TestimonialsFooterComponent
   ],
-  templateUrl: './testimonials-cards.component.html',
-  styleUrl: './testimonials-cards.component.css'
+  templateUrl: './testimonials-cards.component.html'
 })
 export class TestimonialsCardsComponent {
-  @Input() testimonials!: Testimonial[]
+  testimonials = input<Testimonial[]>();
 }
 
 export interface Testimonial {

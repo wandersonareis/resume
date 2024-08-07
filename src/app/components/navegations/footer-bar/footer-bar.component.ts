@@ -1,20 +1,22 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { TranslocoService } from '@jsverse/transloco';
+import { ApiService } from '../../../services/api.service';
 
 @Component({
   selector: 'app-footer-bar',
   standalone: true,
   imports: [],
   templateUrl: './footer-bar.component.html',
-  styleUrl: './footer-bar.component.css'
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FooterBarComponent {
-  footerData!: FooterData;
-  constructor(private translateService: TranslocoService) {
-    this.translateService.selectTranslateObject<FooterData>('footer').subscribe(
-      (data: FooterData) => {
-      this.footerData = data
-    })
+export class FooterBarComponent implements OnInit {
+  apiService = inject(ApiService)
+
+  footerData = signal<FooterData>({} as FooterData);
+
+  ngOnInit(): void {
+    this.apiService.getLanguageData<FooterData>('footer').subscribe(this.footerData.set)
+
   }
 }
 export interface FooterData {

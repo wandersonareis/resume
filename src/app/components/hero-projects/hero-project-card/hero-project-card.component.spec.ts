@@ -1,30 +1,14 @@
-import { ComponentFixture, TestBed, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideLocationMocks } from '@angular/common/testing';
 
 import { HeroProjectCardComponent, HeroProjectImageComponent, HeroProjectTechsListComponent } from './hero-project-card.component';
 import { mocked_projects } from '../../../shared/_spec-tools/mock-api.service';
-import { ComponentRef, Directive, HostListener, Input } from '@angular/core';
+import { ComponentRef } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { provideRouter, Router, RouterLinkWithHref } from '@angular/router';
+import { provideRouter, Router } from '@angular/router';
 import { HomeComponent } from '../../../pages/home/home.component';
 import { ProjectsPageComponent } from '../../../pages/projects-page/projects-page.component';
 
-@Directive({
-  selector: '[routerLink]',
-})
-class RouterLinkSpy {
-  @Input()
-  routerLink = '';
-
-  constructor(private router: Router) {}
-
-  @HostListener('click')
-  onClick() {
-    this.router.navigateByUrl(this.routerLink);
-  }
-}
-
-const leftMouseButton = 0;
 
 describe('Testing HeroProjectCardComponent', () => {
   describe("HeroProjectCardComponent", () => {

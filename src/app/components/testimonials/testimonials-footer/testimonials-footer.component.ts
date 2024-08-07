@@ -1,13 +1,18 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'testimonials-footer',
   standalone: true,
   imports: [],
-  templateUrl: './testimonials-footer.component.html',
-  styleUrl: './testimonials-footer.component.css'
+  template: `
+  <div class="flex flex-col items-center">
+  <span class="text-lg md:text-xl font-semibold">
+    {{ authorName() }}
+  </span>
+  <span class="text-sm">{{ authorOccupation() }}</span>
+</div>`
 })
 export class TestimonialsFooterComponent {
-  @Input() authorName!: string;
-  @Input() authorOccupation!: string;
+  authorName = input<string>();
+  authorOccupation = input<string>();
 }

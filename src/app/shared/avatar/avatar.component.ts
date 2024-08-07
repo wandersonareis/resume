@@ -1,4 +1,4 @@
-import { Component, input, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'avatar',
@@ -7,10 +7,9 @@ import { Component, input, Input } from '@angular/core';
   template: `
   <figure class="max-w-20 max-h-20 bg-theme-400 dark:bg-theme-400-dark object-center rounded-full p-5 overflow-hidden">
   <img [src]="url()" [alt]="alt()" class="rounded-full" />
-</figure>
-`
+</figure>`
 })
 export class AvatarComponent {
-  url = input<string>("");
-  alt = input<string>("Avatar image");
+  url = input<string>();
+  alt = input<string>();
 }

@@ -9,8 +9,7 @@ import { HeroProjectCardComponent, Project } from './hero-project-card/hero-proj
     SharedModule,
     HeroProjectCardComponent
   ],
-  templateUrl: './hero-projects.component.html',
-  styleUrl: './hero-projects.component.css'
+  templateUrl: './hero-projects.component.html'
 })
 export class HeroProjectsComponent {
   projectData = input<HeroProjectsData | null>({} as HeroProjectsData);

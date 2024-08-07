@@ -1,4 +1,4 @@
-import { Component, input, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { IconModule } from '../../../../projects/icon/src/public-api';
 
@@ -20,5 +20,5 @@ import { IconModule } from '../../../../projects/icon/src/public-api';
 })
 export class CopyButtonComponent {
   target = input<string>('');
-  icon = input<string | undefined>("ph:copy");
+  icon = input<string>('ph:copy');
 }

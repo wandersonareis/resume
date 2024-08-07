@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, Input, numberAttribute, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, effect, ElementRef, inject, input, numberAttribute, OnChanges, SimpleChanges } from '@angular/core';
 import { loadIcon } from 'iconify-icon';
 import { SafeHtmlPipe } from '../safe-html.pipe';
 
@@ -10,7 +10,17 @@ import { SafeHtmlPipe } from '../safe-html.pipe';
   imports: [
     SafeHtmlPipe
   ],
-  templateUrl: './icon.component.html',
+  template: `
+  @if (loaded) {
+<ng-container>
+  <svg [attr.viewBox]="viewBox" [innerHTML]="path | safeHtml"></svg>
+</ng-container>
+} @else {
+<ng-container>
+  <div class="placeholder"></div>
+</ng-container>
+}
+`,
   styleUrl: './icon.component.css',
   host: {
     class: 'icon',
@@ -20,10 +30,13 @@ import { SafeHtmlPipe } from '../safe-html.pipe';
 export class IconComponent implements OnChanges {
   private _elementRef = inject(ElementRef);
 
-  @Input() name: string | any;
-  @Input({ transform: numberAttribute })
-  set size(size: number) {
-    this._elementRef.nativeElement.style.setProperty('--icon-svg-size', size + 'px');
+  name = input<string | any>();
+  size = input<number | any>({ transform: numberAttribute });
+
+  constructor() {
+    effect(() => {
+      this._elementRef.nativeElement.style.setProperty('--icon-svg-size', this.size() + 'px');
+    })
   }
 
   path = '';
@@ -44,13 +57,13 @@ export class IconComponent implements OnChanges {
 
   private _loadIcon() {
     this.loaded = false;
-    loadIcon(this.name)
+    loadIcon(this.name())
       .then(data => {
         this.path = data.body;
         this._viewBoxWidth = data.width;
         this._viewBoxHeight = data.height;
         this.loaded = true;
       })
-    ;
+      ;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, input, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { SharedModule } from '../../../../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { LinkButton } from '../../../../shared/link-button/link-button.component';
@@ -13,8 +13,8 @@ import { LinkButton } from '../../../../shared/link-button/link-button.component
   templateUrl: './header-menu.component.html'
 })
 export class HeaderMenuComponent {
-  navLinks = input<NavItem[]>()
-  downloadCv = input<LinkButton>()
+  navLinks = input<NavItem[]>([]);
+  downloadCv = input<LinkButton>({ label: 'Download CV', url: 'javascript:void(0)' } as LinkButton);
 }
 
 export interface NavItem {

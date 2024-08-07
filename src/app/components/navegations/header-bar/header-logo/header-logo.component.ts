@@ -24,7 +24,7 @@ import { SharedModule } from '../../../../shared/shared.module';
 `
 })
 export class HeaderLogoComponent {
-  logo = input<string | undefined>();
-  label = input<string | undefined>();
-  routerLink = input<string | undefined>();
+  logo = input<string>('');
+  label = input<string>('');
+  routerLink = input<string>('/');
 }
