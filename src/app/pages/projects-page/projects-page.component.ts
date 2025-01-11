@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { HeroProjectsData } from '../../components/hero-projects/hero-projects.component';
 import { ProjectsService } from '../../components/hero-projects/services/projects.service';
 import { ActivatedRoute } from '@angular/router';
@@ -19,15 +19,13 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectsPageComponent implements OnInit {
+  private _route = inject(ActivatedRoute);
+  private _projectsService = inject(ProjectsService);
   projectData$ = new BehaviorSubject<HeroProjectsData>({} as HeroProjectsData);
-
-  constructor(
-    private route: ActivatedRoute,
-    private projectsService: ProjectsService
-  ) { }
+  projectData = signal<HeroProjectsData>({} as HeroProjectsData);
 
   ngOnInit(): void {
-    this.route.url.subscribe((url) => {
+    this._route.url.subscribe((url) => {
       if (url[0].path === 'projects') {
         this.getProjects();
       }
@@ -35,7 +33,7 @@ export class ProjectsPageComponent implements OnInit {
   }
 
   getProjects(): void {
-    this.projectsService.getProjectsByFilterData(null).subscribe(data => {
+    this._projectsService.getProjectsByFilterData(null).subscribe(data => {
       this.projectData$.next(data);
     });
   }

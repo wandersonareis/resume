@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { ComponentsModule } from '../../components/components.module';
 import { HeroCardData } from '../../components/hero/hero.component';
 import { ApiService } from '../../services/api.service';
@@ -13,7 +13,8 @@ import { HeroSkillsData } from '../../components/hero-skills/hero-skills.compone
   template: `
   <app-hero [heroCardData]="heroCardData()" />
   <app-hero-skills [skillsData]="skillsData()" />
-  `
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProfilePageComponent implements OnInit {
   apiService = inject(ApiService);
