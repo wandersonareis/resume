@@ -1,7 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --color-theme-primary: #fff;
+  --color-theme-primary-dark: #030712;
+  --color-theme-50: #f9fafb;
+  --color-theme-50-dark: #111827;
+  --color-theme-100: #f3f4f6;
+  --color-theme-100-dark: #1f2937;
+  --color-theme-200: #e5e7eb;
+  --color-theme-200-dark: #374151;
+  --color-theme-300: #d1d5db;
+  --color-theme-300-dark: #4b5563;
+  --color-theme-400: #9ca3af;
+  --color-theme-400-dark: #6b7280;
+  --color-theme-500: #6b7280;
+  --color-theme-500-dark: #9ca3af;
+  --color-theme-600: #4b5563;
+  --color-theme-600-dark: #d1d5db;
+  --color-theme-700: #374151;
+  --color-theme-700-dark: #e5e7eb;
+  --color-theme-800: #1f2937;
+  --color-theme-800-dark: #f3f4f6;
+  --color-theme-900: #111827;
+  --color-theme-900-dark: #f9fafb;
+  --color-theme-950: #030712;
+  --color-theme-950-dark: #ffffff;
+  --color-primary: #4b5563;
+  --color-primary-dark: #d1d5db;
+  --color-background: #fff;
+  --color-background-dark: #111827;
+  --text-heading1-desktop: 3.5rem;
+  --text-heading1-tablet: 3rem;
+  --text-heading1-mobile: 2.25rem;
+  --text-heading2-desktop: 2.25rem;
+  --text-heading2-tablet: 1.125rem;
+  --text-heading2-mobile: 1.125rem;
+  --text-heading3-desktop: 1.875rem;
+  --text-heading3-tablet: 1.5rem;
+  --text-heading3-mobile: 1.5rem;
+  --text-subtitle: 1.25rem;
+  --text-subtitle-mobile: 1.125rem;
+  --leading-heading1-desktop: 4.5rem;
+  --leading-heading1-tablet: 3rem;
+  --leading-heading1-mobile: 2.5rem;
+  --leading-heading2-desktop: 2.5rem;
+  --leading-heading2-tablet: 1.75rem;
+  --leading-heading2-mobile: 1.75rem;
+  --leading-heading3-desktop: 2.25rem;
+  --leading-heading3-tablet: 2rem;
+  --leading-heading3-mobile: 2rem;
+  --leading-subtitle: 1.75rem;
+  --leading-subtitle-mobile: 1.75rem;
+  --font-weight-desktop: 700;
+  --font-weight-tablet: 700;
+  --font-weight-mobile: 600;
+  --font-weight-subtitle: 400;
+  --radius-primary: 0.75rem;
+}
 
 @layer base {
   :root {
@@ -14,7 +73,8 @@
     font-weight: 400;
     font-display: swap;
     src: local("Inter Regular");
-    src: url(/assets/font/inter.woff2) format("woff2"),
+    src:
+      url(/assets/font/inter.woff2) format("woff2"),
       url(/assets/font/inter.ttf) format("truetype");
   }
 

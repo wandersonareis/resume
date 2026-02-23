@@ -1,8 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 import { ProjectsService } from './projects.service';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 import { mocked_projects } from '../../../shared/_spec-tools/mock-api.service';
-
 
 describe('ProjectsServiceService', () => {
   let service: ProjectsService;
@@ -11,7 +13,7 @@ describe('ProjectsServiceService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [ProjectsService]
+      providers: [ProjectsService],
     });
     service = TestBed.inject(ProjectsService);
     httpMock = TestBed.inject(HttpTestingController);
@@ -28,20 +30,21 @@ describe('ProjectsServiceService', () => {
   it('should filter projects by tech', async () => {
     const mockData = mocked_projects;
     const expectedTitle = 'Projects Test';
-    const expectedFirstProjectTitle = "Project B";
+    const expectedFirstProjectTitle = 'Project B';
     const expectedProjectsLength = 1;
     const tech = 'Angular';
     const expectedFilteredProjectsLength = 1;
 
-    service.getProjectsByFilterData(tech).subscribe(data => {
-
+    service.getProjectsByFilterData(tech).subscribe((data) => {
       expect(data.title).toEqual(expectedTitle);
       expect(data.projectsList[0].title).toEqual(expectedFirstProjectTitle);
       expect(data.projectsList[0]).toEqual(mockData.projectsList[1]);
       expect(data.projectsList).toHaveSize(expectedProjectsLength);
     });
 
-    const req = httpMock.expectOne(`${import.meta.env['NG_APP_API_URL']}/projects`);
+    const req = httpMock.expectOne(
+      `https://api.npoint.io/24973a3d86dcd56a6a2b/projects`,
+    );
     expect(req.request.method).toBe('GET');
     req.flush(mockData);
   });
@@ -50,11 +53,11 @@ describe('ProjectsServiceService', () => {
     const tech = null;
     const mockData = mocked_projects;
     const expectedTitle = 'Projects Test';
-    const expectedFirstProjectTitle = "Project A";
-    const expectedLastProjectTitle = "Project C";
+    const expectedFirstProjectTitle = 'Project A';
+    const expectedLastProjectTitle = 'Project C';
     const expectedFilteredProjectsLength = 3;
 
-    service.getProjectsByFilterData(tech).subscribe(data => {
+    service.getProjectsByFilterData(tech).subscribe((data) => {
       expect(data.title).toEqual(expectedTitle);
       expect(data.projectsList).toEqual(mockData.projectsList);
       expect(data.projectsList).toHaveSize(expectedFilteredProjectsLength);
@@ -62,7 +65,9 @@ describe('ProjectsServiceService', () => {
       expect(data.projectsList[2].title).toEqual(expectedLastProjectTitle);
     });
 
-    const req = httpMock.expectOne(`${import.meta.env['NG_APP_API_URL']}/projects`);
+    const req = httpMock.expectOne(
+      `https://api.npoint.io/24973a3d86dcd56a6a2b/projects`,
+    );
     expect(req.request.method).toBe('GET');
     req.flush(mockData);
   });

@@ -1,10 +1,8 @@
 import { Component, input } from '@angular/core';
-import { IconComponent } from "../../../../projects/icon/src/lib/icon/icon.component";
 
 @Component({
   selector: 'external-link-button',
   standalone: true,
-  imports: [IconComponent],
   template: `
   <a type="button" [href]="link()" target="_blank">
    <span class="stroke-theme-600 hover:stroke-theme-800 dark:hover:stroke-theme-600-dark p-1 ">
