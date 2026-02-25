@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { HeroJob } from '../hero-job-card/hero-job-card.component';
+import { HeroJob } from '../hero-job.model';
 
 @Component({
   selector: 'hero-job-card-header',
