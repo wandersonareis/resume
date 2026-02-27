@@ -1,17 +1,17 @@
 import { Component, input } from '@angular/core';
-import { SharedModule } from '../../../shared/shared.module';
 import { TestimonialsContentComponent } from '../testimonials-content/testimonials-content.component';
 import { TestimonialsFooterComponent } from '../testimonials-footer/testimonials-footer.component';
+import { AvatarComponent } from '../../../shared/avatar/avatar.component';
 
 @Component({
   selector: 'testimonials-cards',
   standalone: true,
   imports: [
-    SharedModule,
+    AvatarComponent,
     TestimonialsContentComponent,
-    TestimonialsFooterComponent
+    TestimonialsFooterComponent,
   ],
-  templateUrl: './testimonials-cards.component.html'
+  templateUrl: './testimonials-cards.component.html',
 })
 export class TestimonialsCardsComponent {
   testimonials = input<Testimonial[]>();

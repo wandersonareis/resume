@@ -1,23 +1,29 @@
 import { Component, input } from '@angular/core';
-import { SharedModule } from '../../shared/shared.module';
 import { Social } from '../../shared/social-links/social-links.component';
-import { TranslocoService } from '@jsverse/transloco';
 import { Image } from '../../shared/picture/picture.component';
+import { MarkdownListComponent } from '../../shared/markdown/markdown.component';
+import { SocialLinksComponent } from '../../shared/social-links/social-links.component';
+import { PictureComponent } from '../../shared/picture/picture.component';
+import { LucideAngularModule, MapPin } from 'lucide-angular';
 
 @Component({
   selector: 'hero-location',
   standalone: true,
-  imports: [
-    SharedModule
-  ],
+  imports: [LucideAngularModule],
   template: `
-  <div class="flex justify-center md:justify-start items-center space-x-1">
-  <icon [name]="location()?.icon" />
-  <span>{{ location()?.text }}</span>
-</div>
-`
+    <div class="flex justify-center md:justify-start items-center space-x-1">
+      <lucide-icon
+        [img]="mapPinIcon"
+        [size]="16"
+        [strokeWidth]="1.5"
+        class="text-theme-600 dark:text-theme-600-dark"
+      />
+      <span>{{ location()?.text }}</span>
+    </div>
+  `,
 })
 export class HeroLocationComponent {
+  readonly mapPinIcon = MapPin;
   location = input<HeroLocation | undefined>({} as HeroLocation);
 }
 
@@ -26,9 +32,11 @@ export class HeroLocationComponent {
   standalone: true,
   imports: [
     HeroLocationComponent,
-    SharedModule
+    MarkdownListComponent,
+    SocialLinksComponent,
+    PictureComponent,
   ],
-  templateUrl: './hero.component.html'
+  templateUrl: './hero.component.html',
 })
 export class HeroComponent {
   heroCardData = input<HeroCardData | null>({} as HeroCardData);

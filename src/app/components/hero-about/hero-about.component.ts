@@ -1,16 +1,23 @@
 import { Component, input } from '@angular/core';
-import { SharedModule } from '../../shared/shared.module';
-import { AboutQuickFacts, HeroAboutQuickFactsComponent } from './hero-about-quick-facts/hero-about-quick-facts.component';
+import {
+  AboutQuickFacts,
+  HeroAboutQuickFactsComponent,
+} from './hero-about-quick-facts/hero-about-quick-facts.component';
 import { Image } from '../../shared/picture/picture.component';
+import { TitleAndDescriptionComponent } from '../../shared/title-and-description/title-and-description.component';
+import { PictureComponent } from '../../shared/picture/picture.component';
+import { MarkdownListComponent } from '../../shared/markdown/markdown.component';
 
 @Component({
   selector: 'app-hero-about',
   standalone: true,
   imports: [
-    SharedModule,
-    HeroAboutQuickFactsComponent
+    TitleAndDescriptionComponent,
+    PictureComponent,
+    MarkdownListComponent,
+    HeroAboutQuickFactsComponent,
   ],
-  templateUrl: './hero-about.component.html'
+  templateUrl: './hero-about.component.html',
 })
 export class HeroAboutComponent {
   aboutData = input<HeroAboutData | null>({} as HeroAboutData);

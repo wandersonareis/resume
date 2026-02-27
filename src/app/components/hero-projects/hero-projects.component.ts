@@ -1,15 +1,15 @@
 import { Component, input } from '@angular/core';
-import { SharedModule } from '../../shared/shared.module';
-import { HeroProjectCardComponent, Project } from './hero-project-card/hero-project-card.component';
+import {
+  HeroProjectCardComponent,
+  Project,
+} from './hero-project-card/hero-project-card.component';
+import { TitleAndDescriptionComponent } from '../../shared/title-and-description/title-and-description.component';
 
 @Component({
   selector: 'app-hero-projects',
   standalone: true,
-  imports: [
-    SharedModule,
-    HeroProjectCardComponent
-  ],
-  templateUrl: './hero-projects.component.html'
+  imports: [TitleAndDescriptionComponent, HeroProjectCardComponent],
+  templateUrl: './hero-projects.component.html',
 })
 export class HeroProjectsComponent {
   projectData = input<HeroProjectsData | null>({} as HeroProjectsData);

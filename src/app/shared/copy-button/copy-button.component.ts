@@ -1,24 +1,23 @@
 import { Component, input } from '@angular/core';
 import { ClipboardModule } from '@angular/cdk/clipboard';
-import { IconModule } from '../../../../projects/icon/src/public-api';
+import { LucideAngularModule, Copy } from 'lucide-angular';
 
 @Component({
   selector: 'copy-button',
   standalone: true,
-  imports: [
-    IconModule,
-    ClipboardModule
-  ],
+  imports: [ClipboardModule, LucideAngularModule],
   template: `
-  <icon
-  [cdkCopyToClipboard]="target()"
-  [name]="icon()"
-  size="32"
-  class="text-theme-600 dark:text-theme-500-dark hover:text-theme-500 dark:hover:text-theme-600 cursor-pointer"
-></icon>
-`
+    <!-- TODO: adicionar 'copy' na API icon para substituir o SVG hardcoded -->
+    <lucide-icon
+      [img]="copyIcon"
+      [size]="32"
+      [strokeWidth]="1.5"
+      class="text-theme-600 dark:text-theme-500-dark hover:text-theme-500 dark:hover:text-theme-600 cursor-pointer"
+    />
+  `,
 })
 export class CopyButtonComponent {
   target = input<string>('');
-  icon = input<string | undefined>('ph:copy');
+  // TODO: quando a API enviar 'copy' como nome de ícone, usar app-icon dinamicamente
+  readonly copyIcon = Copy;
 }

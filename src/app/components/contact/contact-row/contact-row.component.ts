@@ -1,13 +1,12 @@
 import { Component, input } from '@angular/core';
-import { SharedModule } from '../../../shared/shared.module';
+import { MailLinkComponent } from '../../../shared/mail-link/mail-link.component';
+import { CopyButtonComponent } from '../../../shared/copy-button/copy-button.component';
 
 @Component({
   selector: 'contact-row',
   standalone: true,
-  imports: [
-    SharedModule
-  ],
-  templateUrl: './contact-row.component.html'
+  imports: [MailLinkComponent, CopyButtonComponent],
+  templateUrl: './contact-row.component.html',
 })
 export class ContactRowComponent {
   contact = input<Contact>();

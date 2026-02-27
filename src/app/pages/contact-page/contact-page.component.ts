@@ -8,25 +8,19 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-contact-page',
   standalone: true,
-  imports: [
-    CommonModule,
-    ComponentsModule
-  ],
+  imports: [CommonModule, ComponentsModule],
   template: `
-  <app-contact [contactData]="contactData$ | async"></app-contact>
+    <app-contact [contactData]="contactData$ | async"></app-contact>
   `,
 })
 export class ContactPageComponent implements OnInit {
-  contactData$ = new BehaviorSubject<ContactData>({} as ContactData)
+  contactData$ = new BehaviorSubject<ContactData>({} as ContactData);
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.apiService.getLanguageData<ContactData>('contact').subscribe(
-      (data: ContactData) => {
-        console.log("data", data);
-        
-        this.contactData$.next(data)
-      })
+    this.apiService
+      .getLanguageData<ContactData>('contact')
+      .subscribe((data: ContactData) => this.contactData$.next(data));
   }
 }

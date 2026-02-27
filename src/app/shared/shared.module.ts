@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { IconModule } from '../../../projects/icon/src/public-api';
 import { LinkButtonComponent } from './link-button/link-button.component';
 import { ThemeToggleComponent } from './theme-toggle/theme-toggle.component';
 import { MailLinkComponent } from './mail-link/mail-link.component';
@@ -15,7 +14,6 @@ import { PictureComponent } from './picture/picture.component';
 
 
 const imports = [
-  IconModule,
   BadgeComponent,
   AvatarComponent,
   PictureComponent,

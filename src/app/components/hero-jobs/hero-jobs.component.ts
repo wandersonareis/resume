@@ -1,21 +1,17 @@
 import { Component, inject, input, OnInit, signal } from '@angular/core';
-import { SharedModule } from '../../shared/shared.module';
 import { HeroJobCardComponent } from './hero-job-card/hero-job-card.component';
 import { ApiService } from '../../services/api.service';
+import { TitleAndDescriptionComponent } from '../../shared/title-and-description/title-and-description.component';
 
 @Component({
   selector: 'app-hero-jobs',
   standalone: true,
-  imports: [
-    SharedModule,
-    HeroJobCardComponent
-  ],
-  templateUrl: './hero-jobs.component.html'
+  imports: [TitleAndDescriptionComponent, HeroJobCardComponent],
+  templateUrl: './hero-jobs.component.html',
 })
 export class HeroJobsComponent {
   apiService = inject(ApiService);
   jobsData = input<JobsData | null>({} as JobsData);
-
 }
 
 type Job = {
@@ -23,8 +19,8 @@ type Job = {
   companyLogo: string;
   title: string;
   duration: string;
-  descriptions: string[]
-}
+  descriptions: string[];
+};
 
 export interface JobsData {
   title: string;

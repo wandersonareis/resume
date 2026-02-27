@@ -1,23 +1,26 @@
 import { Component, input } from '@angular/core';
-import { SharedModule } from '../../../../shared/shared.module';
 import { RouterModule } from '@angular/router';
-import { LinkButton } from '../../../../shared/link-button/link-button.component';
+import {
+  LinkButton,
+  LinkButtonComponent,
+} from '../../../../shared/link-button/link-button.component';
+import { ThemeToggleComponent } from '../../../../shared/theme-toggle/theme-toggle.component';
 
 @Component({
   selector: 'header-menu',
   standalone: true,
-  imports: [
-    RouterModule,
-    SharedModule
-  ],
-  templateUrl: './header-menu.component.html'
+  imports: [RouterModule, LinkButtonComponent, ThemeToggleComponent],
+  templateUrl: './header-menu.component.html',
 })
 export class HeaderMenuComponent {
   navLinks = input<NavItem[]>([]);
-  downloadCv = input<LinkButton>({ label: 'Download CV', url: 'javascript:void(0)' } as LinkButton);
+  downloadCv = input<LinkButton>({
+    label: 'Download CV',
+    url: '#',
+  } as LinkButton);
 }
 
 export interface NavItem {
-  label: string
+  label: string;
   routerLink: string;
-};
+}
