@@ -24,6 +24,7 @@
     "@angular/ssr": "^21.1.5",
     "@jsverse/transloco": "^8.2.1",
     "@ngx-env/builder": "^21.0.1",
+    "@vercel/speed-insights": "^2.0.0",
     "express": "^5.2.1",
     "lucide-angular": "^0.575.0",
     "marked": "^17.0.3",
