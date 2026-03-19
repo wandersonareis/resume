@@ -13,6 +13,7 @@ import {
   provideClientHydration,
   withEventReplay,
 } from '@angular/platform-browser';
+import { SpeedInsightsService } from './services/speed-insights.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -35,5 +36,7 @@ export const appConfig: ApplicationConfig = {
       loader: TranslocoHttpLoader,
     }),
     provideClientHydration(withEventReplay()),
+    // Initialize Vercel Speed Insights
+    SpeedInsightsService,
   ],
 };
