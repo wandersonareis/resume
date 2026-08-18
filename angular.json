@@ -21,6 +21,10 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "assets/i18n/*.json",
+                "input": "src"
               }
             ],
             "styles": [
@@ -28,10 +32,7 @@
             ],
             "scripts": [],
             "server": "src/main.server.ts",
-            "outputMode": "static",
-            "prerender": {
-              "discoverRoutes": true
-            }
+            "outputMode": "static"
           },
           "configurations": {
             "production": {

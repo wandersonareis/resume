@@ -14,12 +14,17 @@ import {
   withEventReplay,
 } from '@angular/platform-browser';
 import { SpeedInsightsService } from './services/speed-insights.service';
+import {
+  HttpTranslationSource,
+} from './http-translation-source';
+import { TranslationSource } from './translation-source';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZonelessChangeDetection(),
     provideRouter(routes),
     provideHttpClient(withFetch()),
+    { provide: TranslationSource, useClass: HttpTranslationSource },
     provideTransloco({
       config: {
         availableLangs: ['br', 'en'],

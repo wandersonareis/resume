@@ -1,15 +1,13 @@
 import { inject, Injectable } from "@angular/core";
 import { Translation, TranslocoLoader } from "@jsverse/transloco";
-import { HttpClient } from "@angular/common/http";
-import { environment } from "../environments/environment";
+import { Observable } from "rxjs";
+import { TranslationSource } from "./translation-source";
 
 @Injectable({ providedIn: 'root' })
 export class TranslocoHttpLoader implements TranslocoLoader {
-    private http = inject(HttpClient);
-    #url = environment.NG_APP_API_URL;
+    private source = inject(TranslationSource);
 
-    getTranslation(lang: string) {
-        const url = `${this.#url}/${lang}`;
-        return this.http.get<Translation>(url);
+    getTranslation(lang: string): Observable<Translation> {
+        return this.source.load(lang);
     }
 }
