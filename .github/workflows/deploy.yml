@@ -1,37 +1,35 @@
-name: Build and Deploy
+name: GitHub Ppages to wandersonareis.io
 
 on:
-  push:
-    branches:
-      - master
-
+    push:
+        branches:
+            - master
 permissions:
-  contents: write
+    contents: write
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v7
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+            - name: Setup Bun
+              uses: oven-sh/setup-bun@v2
+              with:
+                bun-version: latest
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
+            - name: Install dependencies
+              run: bun install
 
-      - name: Install dependencies
-        run: bun install
+            - name: Build
+              run: bun run build
 
-      - name: Build
-        run: bun run build
-
-      - name: Deploy Angular App to GitHub Pages
-        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0
-        with:
-          github_access_token: ${{ secrets.GH_PAT }}
-          build_configuration: production
-          base_href: /resume/
-          deploy_branch: gh-pages
-          angular_dist_build_folder: dist/resume/browser
+            - name: Deploy
+              if: success()
+              uses: JamesIves/github-pages-deploy-action@releases/v4
+              with:
+                branch: gh-pages
+                ssh-key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+                folder: ./dist/resume/browser
+                repository-name: wandersonareis/wandersonareis.github.io
